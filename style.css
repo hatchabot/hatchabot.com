@@ -29,6 +29,10 @@ h2 { font-size:clamp(26px,3.6vw,36px); line-height:1.1; margin:0 0 18px; font-we
 h3 { font-size:17px; margin:0 0 6px; font-weight:800 }
 p { margin:0 0 10px }
 .grid { display:grid; gap:18px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)) }
+.install-grid { display:grid; gap:22px; grid-template-columns:minmax(0,1.4fr) minmax(260px,1fr) }
+@media (max-width:760px) { .install-grid { grid-template-columns:1fr } }
+.shot { margin-top:28px; border:1px solid var(--line); border-radius:14px; overflow:hidden; box-shadow:0 12px 40px rgba(20,22,26,.18); background:#fff }
+.shot img { display:block; width:100%; height:auto }
 .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px 20px }
 .dark .card { background:var(--dark-card); border-color:#33373f }
 .card p { font-size:15px; color:inherit }
@@ -39,12 +43,16 @@ th, td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--line)
 th { font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--eyebrow) }
 td.k { font-weight:700; white-space:nowrap }
 .tablewrap { overflow-x:auto }
-pre { background:#0b0b0b; color:#e8e8e8; padding:14px 16px; border-radius:10px; overflow-x:auto; font-size:14px; line-height:1.5; margin:12px 0 }
+pre { background:#0b0b0b; color:#e8e8e8; padding:14px 16px; border-radius:10px; overflow-x:auto; font-size:15px; line-height:1.5; margin:12px 0; white-space:pre-wrap; word-break:break-all; border-left:5px solid var(--accent) }
+.copyrow { display:flex; gap:10px; align-items:stretch; margin:12px 0 }
+.copyrow pre { flex:1; margin:0 }
+.copyrow button { flex:none; border:2px solid var(--ink); background:var(--ink); color:var(--dark-text); border-radius:10px; font-weight:700; padding:0 14px; cursor:pointer }
 code { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:.93em; background:rgba(0,0,0,.06); padding:1px 5px; border-radius:5px }
 pre code { background:none; padding:0 }
 .dark code { background:rgba(255,255,255,.1) }
 .steps { counter-reset:s; display:grid; gap:14px }
 .steps > div { display:flex; gap:14px; align-items:flex-start }
+.steps > div > div { min-width:0; flex:1 }
 .steps > div::before { counter-increment:s; content:counter(s); flex:none; width:30px; height:30px; border-radius:50%; background:var(--ink); color:var(--accent); font-weight:800; display:flex; align-items:center; justify-content:center; margin-top:2px }
 .diagram { display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); align-items:stretch; margin-top:16px }
 .box { background:var(--card); border:2px solid var(--ink); border-radius:12px; padding:12px 14px; font-size:14px }

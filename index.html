@@ -85,11 +85,11 @@
 <section id="install"><div class="wrap">
   <p class="eyebrow">Get started</p>
   <h2>Your first agent in 15 minutes</h2>
-  <div class="grid" style="grid-template-columns:1.4fr 1fr">
+  <div class="install-grid">
     <div class="steps">
       <div><p><b>Make a bot.</b> In Telegram open <a href="https://t.me/BotFather">@BotFather</a>, send <code>/newbot</code>, keep the token.</p></div>
       <div><p><b>Get Claude ready.</b> <code>npm i -g @anthropic-ai/claude-code</code>, log in once, then <code>claude setup-token</code>.</p></div>
-      <div><p><b>Install Hatchabot</b> on the computer that stays on:</p><pre><code>bash -c "$(curl -fsSL https://hatchabot.com/install.sh)"</code></pre><p class="small">Checks git, Docker and Node 22 (offers to install what's missing), fetches the latest release, pulls the pre-built runtime image, installs the service.</p></div>
+      <div><p><b>Install Hatchabot</b> on the computer that stays on — one line in a terminal:</p><div class="copyrow"><pre><code id="installCmd">bash -c "$(curl -fsSL https://hatchabot.com/install.sh)"</code></pre><button type="button" onclick="navigator.clipboard.writeText(document.getElementById('installCmd').textContent).then(()=>{this.textContent='Copied';setTimeout(()=>this.textContent='Copy',1500)})">Copy</button></div><p class="small">Checks git, Docker and Node 22 (offers to install what's missing), fetches the latest release, pulls the pre-built runtime image, installs the service.</p></div>
       <div><p><b>Open the app</b> at <code>http://localhost:8080</code> — the wizard takes the setup token and the bot token, then creates the agent.</p></div>
       <div><p><b>Say hi</b> on Telegram. It will still remember this conversation next year.</p></div>
     </div>

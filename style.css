@@ -17,7 +17,8 @@ nav a:hover { color:var(--ink) }
 .hero p.lead { font-size:clamp(17px,2.2vw,21px); max-width:760px; margin:0 0 22px }
 .formula { display:flex; align-items:center; gap:10px; flex-wrap:wrap; font-weight:800; font-size:17px; margin:26px 0 8px }
 .formula span.chip { background:var(--ink); color:var(--dark-text); border-radius:8px; padding:7px 13px }
-.formula span.eq { border:2.5px solid var(--ink); border-radius:8px; padding:5px 13px }
+.formula span.eq { display:inline-block; border:2.5px solid var(--ink); border-radius:8px; padding:5px 13px }
+.formula span.chip { display:inline-block }
 .formula-note { font-size:14px; opacity:.85; margin:0 0 26px }
 .cta { display:flex; gap:12px; flex-wrap:wrap }
 section { padding-block:56px }

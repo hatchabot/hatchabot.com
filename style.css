@@ -138,3 +138,12 @@ footer .links { display:flex; flex-wrap:wrap; gap:8px 20px; margin-bottom:10px }
   td:last-child { padding-bottom:14px }
   td[data-label]::before { content:attr(data-label); display:block; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--accent-deep); font-weight:700 }
 }
+
+/* household band */
+.household { background:#f3ebdd; border-block:1px solid var(--line) }
+.household-grid { display:grid; grid-template-columns:minmax(0,1.5fr) minmax(0,1fr); gap:48px; align-items:center }
+@media (max-width:900px) { .household-grid { grid-template-columns:1fr; gap:28px } }
+.tally { background:var(--card); border:2px solid var(--ink); border-radius:18px; padding:18px 22px }
+.tally-row { display:grid; grid-template-columns:72px minmax(0,1fr); align-items:baseline; gap:10px; padding:8px 0; border-bottom:1px solid var(--line); font-size:16px }
+.tally-row:last-of-type { border-bottom:0 }
+.tally-n { font-family:var(--display); font-weight:800; font-size:40px; line-height:1; color:var(--accent-deep); font-variant-numeric:tabular-nums }

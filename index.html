@@ -18,14 +18,14 @@
 <div class="wrap">
   <header class="top">
     <a class="brand" href="/"><img src="icon.png" alt=""> HATCHABOT</a>
-    <nav aria-label="Main"><a class="opt" href="#why">Why</a><a class="opt" href="#features">Features</a><a class="opt" href="#how">How it works</a><a href="#install">Install</a><a href="#faq">FAQ</a><a href="https://github.com/hatchabot/hatchabot">GitHub</a></nav>
+    <nav aria-label="Main"><a class="opt" href="#why">Why</a><a class="opt" href="#household">Household</a><a class="opt" href="#features">Features</a><a class="opt" href="#how">How it works</a><a href="#install">Install</a><a href="#faq">FAQ</a><a href="https://github.com/hatchabot/hatchabot">GitHub</a></nav>
   </header>
 </div>
 
 <section class="hero"><div class="wrap hero-grid">
   <div>
     <h1>Your AI should be a staff, not a search box.</h1>
-    <p class="lede">Hatchabot runs a household of purpose-built AI agents on a computer you own. Each one is a Telegram contact your family can message, thinks with the AI you choose, and remembers for years.</p>
+    <p class="lede">Hatchabot runs a household of purpose-built AI agents on a computer you own. Each one is a Telegram contact your family can message, thinks with the AI you choose, and remembers for years — and one subscription runs them all.</p>
     <div class="formula" aria-label="OpenClaw plus Docker plus Telegram equals Hatchabot"><span class="chip">OpenClaw</span>+<span class="chip">Docker</span>+<span class="chip">Telegram</span>=<span class="eq">Hatchabot</span></div>
     <p class="formula-note">the open-source agent runtime · one isolated container per agent · the front door everyone already has</p>
     <div class="cmd"><pre id="heroCmd">bash -c "$(curl -fsSL https://hatchabot.com/install.sh)"</pre><button type="button" data-copy="heroCmd">Copy</button></div>
@@ -52,6 +52,22 @@
     <div class="card"><h3>“One assistant can't be good at everything.”</h3><p>Make one per job in a minute: a kitchen helper on a cheap model, a tax advisor on the best one, a scheduler that polls its own inbox. Let them consult each other. Clone the good ones.</p></div>
     <div class="card"><h3>“I don't want to be locked in.”</h3><p>Claude today, Gemini or a local model tomorrow — per agent, switchable live. Your agents are files and containers on your hardware. Move them, back them up. Nothing about them belongs to a provider.</p></div>
     <div class="card"><h3>“Only I can use it.”</h3><p>Your family messages agents like contacts on Telegram — nothing to install, no accounts to create. Private threads or a group room, with memory shared or personal and everyone told which.</p></div>
+  </div>
+</div></section>
+
+<section class="household" id="household"><div class="wrap household-grid">
+  <div>
+    <p class="eyebrow">One subscription, the whole household</p>
+    <h2>Everyone gets their own agents. You pay for one plan.</h2>
+    <p class="lede">A tutor for the kids, a planner the whole family shares, your own tax and investing advisors — every agent in the house runs on the same Claude plan, on your machine. Nobody else needs an AI account, an app or a password: they just message the agents made for them on Telegram.</p>
+    <p class="small">Your credential stays on your computer, and people talk to your agents, never to your account. Prefer to pay per use, or not at all? Any agent can run on an API key or a local model instead.</p>
+  </div>
+  <div class="tally" aria-label="Example household">
+    <div class="tally-row"><span class="tally-n">1</span><span>Claude plan</span></div>
+    <div class="tally-row"><span class="tally-n">4</span><span>people in the house</span></div>
+    <div class="tally-row"><span class="tally-n">12</span><span>agents with their own jobs</span></div>
+    <div class="tally-row"><span class="tally-n">0</span><span>apps to install for the family</span></div>
+    <p class="illus" style="margin:10px 0 0">An example household</p>
   </div>
 </div></section>
 
@@ -86,7 +102,7 @@
     <tr><td class="k">Choice of AI</td><td data-label="Claude.ai / ChatGPT">That company's models</td><td data-label="Codex &amp; coding agents">That company's models</td><td data-label="Hatchabot" class="hb">Claude, Gemini, local — per agent, switchable live</td></tr>
     <tr><td class="k">Acts on its own</td><td data-label="Claude.ai / ChatGPT">Limited scheduled tasks</td><td data-label="Codex &amp; coding agents">When you run it</td><td data-label="Hatchabot" class="hb">Schedules, events, and requests from other agents</td></tr>
     <tr><td class="k">Access to your things</td><td data-label="Claude.ai / ChatGPT">Connectors the vendor chose</td><td data-label="Codex &amp; coding agents">The repo</td><td data-label="Hatchabot" class="hb">Per agent: a folder, a git repo, a Google account — with limits you set</td></tr>
-    <tr><td class="k">Cost</td><td data-label="Claude.ai / ChatGPT">Per seat</td><td data-label="Codex &amp; coding agents">Per token or per seat</td><td data-label="Hatchabot" class="hb">One Claude Max plan powers every agent; local models cost nothing per token</td></tr>
+    <tr><td class="k">Cost</td><td data-label="Claude.ai / ChatGPT">Per seat</td><td data-label="Codex &amp; coding agents">Per token or per seat</td><td data-label="Hatchabot" class="hb">One Claude plan runs every agent for the whole household; local models cost nothing per token</td></tr>
     <tr><td class="k">Lock-in</td><td data-label="Claude.ai / ChatGPT">Your history stays with them</td><td data-label="Codex &amp; coding agents">The repo is yours; the service is theirs</td><td data-label="Hatchabot" class="hb">Export, move to another machine, change provider — the agents are yours</td></tr>
     </tbody>
   </table></div>
@@ -137,7 +153,7 @@
   <p class="eyebrow">Questions</p>
   <h2>Frequently asked</h2>
   <details class="faq"><summary>Do I need to be technical?</summary><p>You need to be comfortable pasting one command into a terminal, once. After that everything happens in the web app and in Telegram. The people you invite need nothing but Telegram.</p></details>
-  <details class="faq"><summary>What does it cost?</summary><p>The software is free and open source (MIT). You bring the hardware and the AI: a Claude Pro or Max subscription powers every agent for a flat monthly fee; an API key is billed per token; a local model costs nothing per message.</p></details>
+  <details class="faq"><summary>What does it cost?</summary><p>The software is free and open source (MIT). You bring the hardware and the AI: one Claude Pro or Max subscription runs every agent in the household for a flat monthly fee — the rest of the family doesn't need their own plan to use the agents you set up for them. An API key is billed per token instead, and a local model costs nothing per message.</p></details>
   <details class="faq"><summary>What hardware do I need?</summary><p>Any Linux or macOS computer that stays on and runs Docker. The runtime image is about 2 GB, and each agent is one container with its own volume — a Mac mini comfortably runs a household's worth. A second machine can host agents too, over Tailscale.</p></details>
   <details class="faq"><summary>Where does my data go?</summary><p>Agents, their memory and your credentials live on your machine. Messages travel through Telegram, and each turn is sent to the AI provider you chose for that agent — or to nobody, if the agent runs on a local model.</p></details>
   <details class="faq"><summary>Is it secure?</summary><p>Every agent runs in its own container with its own bot and credentials, secrets are encrypted at rest, and the app is reached over your private Tailscale network rather than an open port. A daily posture check flags agents that combine a wide audience with a powerful capability. The code has been through fifteen full audits; see <a href="https://github.com/hatchabot/hatchabot/blob/main/SECURITY.md">SECURITY.md</a> to report an issue.</p></details>

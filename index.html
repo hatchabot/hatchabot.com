@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hatchabot — your AI should be a staff, not a search box</title>
-<meta name="description" content="Hatchabot runs a household of purpose-built AI agents on a computer you own. Each one is a Telegram contact, thinks with Claude, Gemini or a local model, and remembers for years. Open source, MIT.">
+<meta name="description" content="ChatGPT and Claude give you one assistant, in their app, for you. Hatchabot turns the plan you already pay for into a staff of AI agents on a computer you own — each with its own job, memory you can read, and a Telegram contact your family can message. Open source, MIT.">
 <meta name="theme-color" content="#e8a33d">
 <meta property="og:title" content="Hatchabot — your AI should be a staff, not a search box">
-<meta property="og:description" content="Many purpose-built AI agents, on hardware you own, reachable by the people you let in, through Telegram. OpenClaw + Docker + Telegram = Hatchabot.">
+<meta property="og:description" content="One assistant is not a staff. Hatchabot runs many purpose-built AI agents on hardware you own, with memory in files you keep, reachable by the people you let in, through Telegram.">
 <meta property="og:image" content="https://hatchabot.com/icon.png">
 <meta property="og:url" content="https://hatchabot.com">
 <link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="icon.png">
@@ -25,7 +25,7 @@
 <section class="hero"><div class="wrap hero-grid">
   <div>
     <h1>Your AI should be a staff, not a search box.</h1>
-    <p class="lede">Hatchabot runs a household of purpose-built AI agents on a computer you own. Each one is a Telegram contact your family can message, thinks with the AI you choose, and remembers for years — and one subscription runs them all.</p>
+    <p class="lede">ChatGPT and Claude give you one brilliant assistant, in their app, for you. Hatchabot turns the plan you already pay for into a <b>staff of agents that live on a computer you own</b> — each with its own job and memory, each a Telegram contact your whole family can message.</p>
     <div class="formula" aria-label="OpenClaw plus Docker plus Telegram equals Hatchabot"><span class="chip">OpenClaw</span>+<span class="chip">Docker</span>+<span class="chip">Telegram</span>=<span class="eq">Hatchabot</span></div>
     <p class="formula-note">the open-source agent runtime · one isolated container per agent · the front door everyone already has</p>
     <div class="cmd"><pre id="heroCmd">bash -c "$(curl -fsSL https://hatchabot.com/install.sh)"</pre><button type="button" data-copy="heroCmd">Copy</button></div>
@@ -44,15 +44,16 @@
 </div></section>
 
 <section id="why"><div class="wrap">
-  <p class="eyebrow">The problem</p>
-  <h2>A brilliant model, in the wrong shape</h2>
-  <p class="lede" style="margin-bottom:28px">You already pay for a model that can do almost anything. What you get is <b>one assistant, in one app, from one company, for one person</b> — whose memory of you is whatever that company decides to keep.</p>
+  <p class="eyebrow">The first question</p>
+  <h2>“Can't ChatGPT or Claude already do this?”</h2>
+  <p class="lede" style="margin-bottom:28px">Fair question — and more so every year. They remember you now. They run tasks on a schedule. They read your Drive. For one person in one app they are excellent, and Hatchabot doesn't try to beat them at it: it <i>uses</i> one of them as the brain. Four things change once the assistant has to serve a household.</p>
   <div class="grid cols-2">
-    <div class="card"><h3>“I keep re-explaining myself.”</h3><p>Hatchabot agents remember. Facts, decisions and preferences are written to memory files you can read and edit. Tell it once who you are, and every agent you create already knows.</p></div>
-    <div class="card"><h3>“One assistant can't be good at everything.”</h3><p>Make one per job in a minute: a kitchen helper on a cheap model, a tax advisor on the best one, a scheduler that polls its own inbox. Let them consult each other. Clone the good ones.</p></div>
-    <div class="card"><h3>“I don't want to be locked in.”</h3><p>Claude today, Gemini or a local model tomorrow — per agent, switchable live. Your agents are files and containers on your hardware. Move them, back them up. Nothing about them belongs to a provider.</p></div>
-    <div class="card"><h3>“Only I can use it.”</h3><p>Your family messages agents like contacts on Telegram — nothing to install, no accounts to create. Private threads or a group room, with memory shared or personal and everyone told which.</p></div>
+    <div class="card"><h3>Everyone gets agents. Nobody gets an account.</h3><p>Sharing an assistant over there means everyone signs in: ChatGPT projects invite people who have their own accounts, Claude's want a paid seat each. Here your family just messages a contact in Telegram — no app, no login, no extra seat — and each person can have their own agents, with their own memory, on your one plan.</p></div>
+    <div class="card"><h3>The memory is a file you own.</h3><p>Both remember you. Neither lets you open that memory, correct a wrong fact, back it up, or carry it to another company — Claude will import memories <i>from</i> the others, but nothing comes back out. A Hatchabot agent's memory is a text file on your disk, and it survives a rebuild, a change of model, and a move to another machine.</p></div>
+    <div class="card"><h3>A staff, not one generalist.</h3><p>One assistant answers your tax question, your kid's homework and your condo board in the same voice, from the same context. Hatchabot agents are separate by design — their own persona, model, data and people — and they can consult each other mid-task, which no consumer chat app lets an ordinary subscriber do.</p></div>
+    <div class="card"><h3>It runs on your machine, with your things, scoped.</h3><p>Their scheduled tasks run in their cloud, with the tools they chose, across your whole account. A Hatchabot agent runs on your computer with exactly what its job needs: this folder, that git repo, a Google account that may read mail but never send. Put one on a local model and nothing leaves the house at all.</p></div>
   </div>
+  <p class="note">The honest version: if you're the only one using it and you're happy inside one app, the chat apps are more polished, need no setup, and are the better deal. Hatchabot is for when there are several jobs, several people, and things you'd rather keep on hardware you own. Comparisons describe the consumer apps as of September 2026.</p>
 </div></section>
 
 <section class="household" id="household"><div class="wrap household-grid">
@@ -88,40 +89,35 @@
 
 <section class="dark" id="features"><div class="wrap">
   <p class="eyebrow">Features</p>
-  <h2>What you can do that you can't do with a chat app</h2>
+  <h2>What a staff can do that an assistant can't</h2>
   <div class="grid cols-3">
-    <div class="card"><span class="ico">⚡</span><h3>Create agents fast</h3><p>A name, one paragraph and a bot token become a running, remembering agent in a minute. Clone one you like, import a shared template, keep a launchpad of planned agents.</p></div>
-    <div class="card"><span class="ico">🧠</span><h3>Choose the brain per agent</h3><p>Claude (subscription or API), Gemini or a local model. Switch the model live. Classes put a tier of agents on the right model, source and runtime image in one place.</p></div>
-    <div class="card"><span class="ico">🔑</span><h3>Give agents accounts and data</h3><p>Gmail, Calendar, Drive and Sheets per agent — with “read but never send” if you like. Read-only or writable folders. Git repos it commits to; public repos need no key at all.</p></div>
-    <div class="card"><span class="ico">⏰</span><h3>Schedule and react</h3><p>Cron tasks, and event-triggered tasks where a zero-cost check decides whether to wake the model. Test any task with Run now.</p></div>
-    <div class="card"><span class="ico">🤝</span><h3>Agents that consult each other</h3><p>Grant an investing agent access to your tax and legal agents, and it asks them mid-task — with scoped tokens, loop guards and rate limits.</p></div>
-    <div class="card"><span class="ico">📝</span><h3>Memory is a file, not a chat log</h3><p>Save a conversation to memory, download an agent's whole chat history, or recover the context of a thread that got reset. Nothing important is trapped in a transcript.</p></div>
-    <div class="card"><span class="ico">📊</span><h3>Operator-grade</h3><p>Fleet health, usage per agent per day, an audit timeline, a daily security posture with diffs, nightly backups with a restore drill, and snapshots before every change.</p></div>
-    <div class="card"><span class="ico">🧪</span><h3>Upgrade one agent at a time</h3><p>Build a runtime candidate, try it on a single agent, then promote it to the fleet or discard it. Rebuilds keep memory.</p></div>
-    <div class="card"><span class="ico">🔒</span><h3>Private by default</h3><p>The app lives on your machine. Reach it from anywhere over Tailscale — never a port opened on your router. Telegram works from anywhere regardless.</p></div>
+    <div class="card"><span class="ico">⚡</span><h3>A new agent in a minute</h3><p>A name, a paragraph and a bot token. Clone one that works, import a template someone shared, keep a launchpad of ones you're planning.</p></div>
+    <div class="card"><span class="ico">🧠</span><h3>A different brain per job</h3><p>Claude, Gemini or a local model, switchable live. Cheap models for simple jobs, the best one where it matters — or nothing per message at all.</p></div>
+    <div class="card"><span class="ico">🔑</span><h3>Your accounts and files, scoped</h3><p>Per agent: a folder, a git repo, a Google account that can read mail but never send. Each agent gets what its job needs and nothing else.</p></div>
+    <div class="card"><span class="ico">⏰</span><h3>Work while you sleep</h3><p>Scheduled tasks, and event-triggered ones where a zero-cost check decides whether to wake the model at all. Agents message you first when it matters.</p></div>
+    <div class="card"><span class="ico">🤝</span><h3>Agents that consult each other</h3><p>Your investing agent asks your tax agent mid-task — with scoped tokens, loop guards and rate limits.</p></div>
+    <div class="card"><span class="ico">📊</span><h3>Run like infrastructure</h3><p>Health, usage per source and per agent, an audit trail, nightly backups with a restore drill, and upgrades you try on one agent before the fleet.</p></div>
   </div>
-  <p class="note">Built on <b>OpenClaw</b>, the open-source agent runtime: every Hatchabot agent is a stock OpenClaw gateway in its own Docker container. Hatchabot adds the layer OpenClaw deliberately leaves to you — many isolated installs, run as a fleet, by more than one person.</p>
+  <p class="note">Built on <b>OpenClaw</b>, the open-source agent runtime: every Hatchabot agent is a stock OpenClaw gateway in its own Docker container. Hatchabot adds the layer OpenClaw leaves to you — many isolated installs, run as a fleet, by more than one person.</p>
 </div></section>
 
 <section id="compare"><div class="wrap">
   <p class="eyebrow">Compared</p>
-  <h2>Versus Claude.ai, ChatGPT and Codex</h2>
+  <h2>Side by side</h2>
   <p class="lede" style="margin-bottom:24px"><b>A chat app is a place you go to talk to one assistant. Hatchabot is a staff of agents that live on your machine and come to you.</b></p>
   <div class="tablewrap"><table>
-    <thead><tr><th></th><th>Claude.ai / ChatGPT</th><th>Codex &amp; coding agents</th><th class="hb">Hatchabot</th></tr></thead>
+    <thead><tr><th></th><th>Claude.ai / ChatGPT</th><th class="hb">Hatchabot</th></tr></thead>
     <tbody>
-    <tr><td class="k">Shape</td><td data-label="Claude.ai / ChatGPT">One assistant, one app, one person</td><td data-label="Codex &amp; coding agents">One agent, one repo, one task at a time</td><td data-label="Hatchabot" class="hb">A fleet of agents with jobs, for a household</td></tr>
-    <tr><td class="k">Runs where</td><td data-label="Claude.ai / ChatGPT">Their cloud</td><td data-label="Codex &amp; coding agents">Their cloud or your terminal</td><td data-label="Hatchabot" class="hb">Your machine, reachable over your private network</td></tr>
-    <tr><td class="k">Memory</td><td data-label="Claude.ai / ChatGPT">What the provider keeps; opaque</td><td data-label="Codex &amp; coding agents">The repo and the session</td><td data-label="Hatchabot" class="hb">Files you read, edit and back up; survives rebuilds and moves</td></tr>
-    <tr><td class="k">Who can talk to it</td><td data-label="Claude.ai / ChatGPT">You, in the app</td><td data-label="Codex &amp; coding agents">You, in the terminal or a PR</td><td data-label="Hatchabot" class="hb">Anyone you invite, on Telegram</td></tr>
-    <tr><td class="k">Choice of AI</td><td data-label="Claude.ai / ChatGPT">That company's models</td><td data-label="Codex &amp; coding agents">That company's models</td><td data-label="Hatchabot" class="hb">Claude, Gemini, local — per agent, switchable live</td></tr>
-    <tr><td class="k">Acts on its own</td><td data-label="Claude.ai / ChatGPT">Limited scheduled tasks</td><td data-label="Codex &amp; coding agents">When you run it</td><td data-label="Hatchabot" class="hb">Schedules, events, and requests from other agents</td></tr>
-    <tr><td class="k">Access to your things</td><td data-label="Claude.ai / ChatGPT">Connectors the vendor chose</td><td data-label="Codex &amp; coding agents">The repo</td><td data-label="Hatchabot" class="hb">Per agent: a folder, a git repo, a Google account — with limits you set</td></tr>
-    <tr><td class="k">Cost</td><td data-label="Claude.ai / ChatGPT">Per seat</td><td data-label="Codex &amp; coding agents">Per token or per seat</td><td data-label="Hatchabot" class="hb">One Claude plan runs every agent for the whole household; local models cost nothing per token</td></tr>
-    <tr><td class="k">Lock-in</td><td data-label="Claude.ai / ChatGPT">Your history stays with them</td><td data-label="Codex &amp; coding agents">The repo is yours; the service is theirs</td><td data-label="Hatchabot" class="hb">Export, move to another machine, change provider — the agents are yours</td></tr>
+    <tr><td class="k">Shape</td><td data-label="Claude.ai / ChatGPT">One assistant, one app, one person</td><td data-label="Hatchabot" class="hb">A staff of agents with jobs, for a household</td></tr>
+    <tr><td class="k">Who can use it</td><td data-label="Claude.ai / ChatGPT">You; others need their own account, and a paid seat on Claude</td><td data-label="Hatchabot" class="hb">Anyone you invite, on Telegram, with no account of their own</td></tr>
+    <tr><td class="k">Memory</td><td data-label="Claude.ai / ChatGPT">Kept by the provider — you can clear it, not read or move it</td><td data-label="Hatchabot" class="hb">Text files on your disk: read them, fix them, back them up, take them with you</td></tr>
+    <tr><td class="k">Acts on its own</td><td data-label="Claude.ai / ChatGPT">Scheduled tasks, in their cloud, with their tools</td><td data-label="Hatchabot" class="hb">Schedules, events, and requests from other agents — on your machine</td></tr>
+    <tr><td class="k">Access to your things</td><td data-label="Claude.ai / ChatGPT">The connectors they built, across your whole account</td><td data-label="Hatchabot" class="hb">Per agent: one folder, one repo, one account — with limits you set</td></tr>
+    <tr><td class="k">Choice of AI</td><td data-label="Claude.ai / ChatGPT">That company's models</td><td data-label="Hatchabot" class="hb">Claude, Gemini or a local model — per agent, switchable live</td></tr>
+    <tr><td class="k">If you leave</td><td data-label="Claude.ai / ChatGPT">Your history stays with them</td><td data-label="Hatchabot" class="hb">Export it, move it to another machine, change provider — the agents are yours</td></tr>
     </tbody>
   </table></div>
-  <p class="note">The honest caveat: the chat apps are polished, need no setup, and their models are excellent. Hatchabot doesn't compete with the model — it <i>uses</i> one (Claude by default). It competes with the app around the model.</p>
+  <p class="note">The honest caveat: the chat apps are polished, need no setup, and their models are excellent. Hatchabot doesn't compete with the model — it <i>uses</i> one, Claude by default. It competes with the app around the model. (Coding agents like Codex and Claude Code are a different tool again: one agent, one repo, one task — and one of the things you can build here.)</p>
 </div></section>
 
 <section class="dark" id="how"><div class="wrap">
@@ -161,7 +157,7 @@
 </div></section>
 
 <section class="dark" style="padding-block:34px"><div class="wrap">
-  <div class="strip"><span>Open source, MIT</span><span>965 automated tests</span><span>15 full audits</span><span>Pre-built images for arm64 and amd64</span><span>Tagged releases with notes</span></div>
+  <div class="strip"><span>Open source, MIT</span><span>978 automated tests</span><span>15 full audits</span><span>Pre-built images for arm64 and amd64</span><span>Tagged releases with notes</span></div>
 </div></section>
 
 <section id="faq"><div class="wrap" style="max-width:860px">

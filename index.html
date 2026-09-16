@@ -106,23 +106,24 @@
   <h2>An operating system for agents — including the ones you sell</h2>
   <p class="lede" style="margin-bottom:26px">An agent here is a container with a job, its own credentials and its own memory. Hatchabot is the layer that creates, connects, schedules, watches and upgrades a fleet of them on a machine you control — which is what it takes to put AI inside a real operation instead of a chat window.</p>
   <p class="lede" style="margin-bottom:26px"><b>And the cost curve bends the right way.</b> The first agent takes an afternoon: the machine, the AI source, the bot pool, the image, the backups. The twentieth takes a minute, because all of that is already standing. Once the infrastructure is there, trying an idea stops being a project and becomes a name and a paragraph — so you make the agent you'd never have bothered to build.</p>
-  <div class="card" style="margin-bottom:18px">
-    <h3>A worked example: managing condo corporations</h3>
-    <div class="grid cols-2" style="gap:22px;margin-top:6px">
-      <div>
-        <p style="margin-top:0">Attach the property manager's Gmail and the corporation's Drive to one agent — scoped to that agent, and the mail tool can be attached with <b>sending switched off</b> until you trust it.</p>
-        <p style="margin-bottom:0">Then give it the job: draft board-meeting minutes, collect contractor quotes and drive them to a decision, keep the corporation's files in order, track open issues, watch the reserve fund, sanity-check the books.</p>
-      </div>
-      <div>
-        <p style="margin-top:0">Schedules and event triggers do the unattended parts. The manager talks to it on Telegram like a colleague, and it messages first when something needs a decision.</p>
-        <p style="margin-bottom:0"><b>Then clone it for the next corporation.</b> Each client gets its own container, its own credentials and its own memory — nothing mixes. Improve the master and push the improvement down to the copies.</p>
-      </div>
+  <div class="grid cols-2" style="margin-bottom:18px;align-items:start">
+    <div class="card">
+      <h3>Built on it: a meeting scheduler anyone can email</h3>
+      <p style="margin-top:0">It has its own Gmail account. Anyone — no Telegram, no login, no account of any kind — emails it with their availability and who's required or optional, and it negotiates by email with each invitee until it finds a time that works. It runs votes too: put a decision to a group and it drives the thread to an answer.</p>
+      <p><b>It was built by describing it in English.</b> No code, no deployment, no glue.</p>
+      <p style="margin-bottom:0">Then a second agent was built to test it: a QA agent wired to the scheduler <b>both ways</b>, running regressions to check it still answers correctly. The whole scheduler travels as one portable file you can hand to someone else.</p>
+    </div>
+    <div class="card">
+      <h3>Building on it: managing condo corporations</h3>
+      <p style="margin-top:0">Attach the property manager's Gmail and the corporation's Drive to one agent — scoped to that agent, and the mail tool can be attached with <b>sending switched off</b> until you trust it.</p>
+      <p>Then give it the job: draft board-meeting minutes, collect contractor quotes and drive them to a decision, keep the corporation's files in order, track open issues, watch the reserve fund, sanity-check the books. Schedules do the unattended parts; the manager talks to it on Telegram like a colleague.</p>
+      <p style="margin-bottom:0"><b>Then clone it for the next corporation.</b> Each client gets its own container, credentials and memory — nothing mixes. Improve the master and push the improvement down to the copies.</p>
     </div>
   </div>
   <div class="grid cols-2">
     <div class="card"><h3>Always on, on hardware you own</h3><p>Holding a client's mailbox for a year and acting on it at 6am takes a computer that's yours and never sleeps. Hosted agent platforms bill by the session-hour and keep the state on their servers.</p></div>
     <div class="card"><h3>One isolated tenant per client</h3><p>Container, bot, secrets, memory — separate by construction. “Where does our data live?” has a physical answer you can point at.</p></div>
-    <div class="card"><h3>A front door they already have</h3><p>Your client messages a Telegram contact. No app for you to build, no account with an AI vendor, no seat to buy for everyone in their office.</p></div>
+    <div class="card"><h3>A front door they already have</h3><p>Your client messages a Telegram contact — or emails an address the agent owns. No app for you to build, no account with an AI vendor, no seat for everyone in their office.</p></div>
     <div class="card"><h3>Portable by design</h3><p>Move an agent between Claude, Gemini and a local model without rewriting it. OpenAI shut down its Assistants API in August 2026 and retires Agent Builder in November — for a builder, portability isn't theoretical.</p></div>
     <div class="card" style="grid-column:1/-1"><h3>An agent is a thing you can give away — or sell</h3><p>Export any agent as a single file: its persona, its operating rules, its schedules, its shape — with the credentials and the private memory stripped out. Someone else imports it, points it at their own accounts, and adapts it. Share a template by link, or hand over a whole working agent.</p><p>That makes a market in agent <i>apps</i> possible without a store, a runtime lock-in or a revenue share: the configuration and the training <b>are</b> the product, and you own a fleet of them.</p></div>
   </div>

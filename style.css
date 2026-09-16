@@ -147,3 +147,8 @@ footer .links { display:flex; flex-wrap:wrap; gap:8px 20px; margin-bottom:10px }
 .tally-row { display:grid; grid-template-columns:72px minmax(0,1fr); align-items:baseline; gap:10px; padding:8px 0; border-bottom:1px solid var(--line); font-size:16px }
 .tally-row:last-of-type { border-bottom:0 }
 .tally-n { font-family:var(--display); font-weight:800; font-size:40px; line-height:1; color:var(--accent-deep); font-variant-numeric:tabular-nums }
+
+/* product screenshots */
+.shot { margin:0 }
+.shot img { display:block; width:100%; height:auto; border:1px solid var(--line); border-radius:14px; background:var(--card); box-shadow:0 18px 40px rgba(20,22,26,.10) }
+.shot figcaption { margin-top:10px }

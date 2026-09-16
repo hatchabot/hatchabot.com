@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hatchabot — your AI should be a staff, not a search box</title>
-<meta name="description" content="ChatGPT and Claude give you one assistant, in their app, for you. Hatchabot turns the plan you already pay for into a staff of AI agents on a computer you own — each with its own job, memory you can read, and a Telegram contact your family can message. Open source, MIT.">
+<meta name="description" content="An open-source agentic operating system. Hatchabot runs a staff of AI agents on a computer you own — each with its own job and memory you can read — tied to no frontier lab: you buy inference, the rest is MIT-licensed code you control.">
 <meta name="theme-color" content="#e8a33d">
 <meta property="og:title" content="Hatchabot — your AI should be a staff, not a search box">
 <meta property="og:description" content="One assistant is not a staff. Hatchabot runs many purpose-built AI agents on hardware you own, with memory in files you keep, reachable by the people you let in, through Telegram.">
@@ -18,14 +18,14 @@
 <div class="wrap">
   <header class="top">
     <a class="brand" href="/"><img src="icon.png" alt=""> HATCHABOT</a>
-    <nav aria-label="Main"><a class="opt" href="#why">Why</a><a class="opt" href="#household">Household</a><a class="opt" href="#build">Build on it</a><a class="opt" href="#features">Features</a><a class="opt" href="#how">How it works</a><a href="#install">Install</a><a href="#faq">FAQ</a><a href="https://github.com/hatchabot/hatchabot">GitHub</a></nav>
+    <nav aria-label="Main"><a class="opt" href="#why">Why</a><a class="opt" href="#household">Household</a><a class="opt" href="#inference">Open source</a><a class="opt" href="#build">Build on it</a><a class="opt" href="#features">Features</a><a class="opt" href="#how">How it works</a><a href="#install">Install</a><a href="#faq">FAQ</a><a href="https://github.com/hatchabot/hatchabot">GitHub</a></nav>
   </header>
 </div>
 
 <section class="hero"><div class="wrap hero-grid">
   <div>
     <h1>Your AI should be a staff, not a search box.</h1>
-    <p class="lede">ChatGPT and Claude give you one brilliant assistant, in their app, for you. Hatchabot turns the plan you already pay for into a <b>staff of agents that live on a computer you own</b> — each with its own job and memory, each a Telegram contact your whole family can message.</p>
+    <p class="lede">ChatGPT and Claude give you one brilliant assistant, in their app, for you. Hatchabot is an <b>open-source agentic operating system</b>: it turns the plan you already pay for into a staff of agents that live on a computer you own — each with its own job and memory, each a Telegram contact your whole family can message.</p>
     <div class="formula" aria-label="OpenClaw plus Docker plus Telegram equals Hatchabot"><span class="chip">OpenClaw</span>+<span class="chip">Docker</span>+<span class="chip">Telegram</span>=<span class="eq">Hatchabot</span></div>
     <p class="formula-note">the open-source agent runtime · one isolated container per agent · the front door everyone already has</p>
     <div class="cmd"><pre id="heroCmd">bash -c "$(curl -fsSL https://hatchabot.com/install.sh)"</pre><button type="button" data-copy="heroCmd">Copy</button></div>
@@ -85,6 +85,14 @@
     </div>
     <figure class="shot" style="margin:0"><img src="screenshot-usage.png" alt="Usage for an AI source: requests and tokens for the last 5 hours and 7 days, a 7-day chart, and the agents using it most" width="1640" height="800" loading="lazy"></figure>
   </div>
+</div></section>
+
+<section id="inference"><div class="wrap" style="max-width:900px">
+  <p class="eyebrow">What you actually buy from a frontier lab</p>
+  <h2>Inference. That's the whole list.</h2>
+  <p class="lede">A chat app is a product built around a model, and the company that owns the model owns the product: how the agent behaves, what it remembers, which tools it may touch, what it costs next year, and whether it still exists next year.</p>
+  <p class="lede">Hatchabot takes one thing from them — <b>tokens</b> — and leaves the rest in the open. The runtime is OpenClaw, the control plane is this project, both open source and MIT. How an agent thinks, what it remembers, what it may reach and who may talk to it are decided by files on your machine and by code anyone can read, fork and fix.</p>
+  <p class="note" style="margin-top:22px">Which is why swapping labs is a setting, not a migration: an agent moves between Claude, Gemini and a local model without being rewritten. When a vendor retires an interface — OpenAI shut down its Assistants API in August 2026 and retires Agent Builder in November — your agents don't go with it.</p>
 </div></section>
 
 <section class="dark" id="features"><div class="wrap">
@@ -150,6 +158,7 @@
     <tr><td class="k">Acts on its own</td><td data-label="Claude.ai / ChatGPT">Scheduled tasks, in their cloud, with their tools</td><td data-label="Hatchabot" class="hb">Schedules, events, and requests from other agents — on your machine</td></tr>
     <tr><td class="k">Access to your things</td><td data-label="Claude.ai / ChatGPT">The connectors they built, across your whole account</td><td data-label="Hatchabot" class="hb">Per agent: one folder, one repo, one account — with limits you set</td></tr>
     <tr><td class="k">Choice of AI</td><td data-label="Claude.ai / ChatGPT">That company's models</td><td data-label="Hatchabot" class="hb">Claude, Gemini or a local model — per agent, switchable live</td></tr>
+    <tr><td class="k">Who decides how it behaves</td><td data-label="Claude.ai / ChatGPT">The vendor — their client, their rules, their roadmap</td><td data-label="Hatchabot" class="hb">Open source (MIT): files you edit, code anyone can fork — you buy only the inference</td></tr>
     <tr><td class="k">If you leave</td><td data-label="Claude.ai / ChatGPT">Your history stays with them</td><td data-label="Hatchabot" class="hb">Export it, move it to another machine, change provider — the agents are yours</td></tr>
     </tbody>
   </table></div>

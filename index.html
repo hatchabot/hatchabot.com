@@ -27,7 +27,7 @@
     <h1>Your AI should be a staff, not a search box.</h1>
     <p class="lede">ChatGPT and Claude give you one brilliant assistant, in their app, for you. Hatchabot is an <b>open-source agentic operating system</b>: it turns the plan you already pay for into a staff of agents that live on a computer you own — each with its own job and memory, each a Telegram contact your whole family can message.</p>
     <div class="formula" aria-label="OpenClaw plus Docker plus Telegram equals Hatchabot"><span class="chip">OpenClaw</span>+<span class="chip">Docker</span>+<span class="chip">Telegram</span>=<span class="eq">Hatchabot</span></div>
-    <p class="formula-note">the open-source agent runtime · one isolated container per agent · the front door everyone already has</p>
+    <p class="formula-note">the open-source agent runtime · one isolated container per agent · a front door people already have — Telegram, Slack, Discord, or just the web app</p>
     <div class="cmd"><pre id="heroCmd">bash -c "$(curl -fsSL https://hatchabot.com/install.sh)"</pre><button type="button" data-copy="heroCmd">Copy</button></div>
     <p class="small" style="margin:0 0 22px;color:inherit;opacity:.85">One line on a Linux or macOS machine that stays on. Then the app walks you through your first agent.</p>
     <div class="cta"><a class="btn primary" href="#install">Get started</a><a class="btn ghost" href="https://github.com/hatchabot/hatchabot">Source on GitHub</a></div>
@@ -75,15 +75,22 @@
 <section id="panel"><div class="wrap">
   <p class="eyebrow">The control panel</p>
   <h2>Your whole staff on one page</h2>
-  <p class="lede" style="margin-bottom:24px">Every agent, grouped how you like, with what it can do one tap away — and a running account of what the house has been up to. It's a web page on your own machine: open it on a laptop or install it as an app on your phone.</p>
-  <figure class="shot"><img src="screenshot.png" alt="The Hatchabot control panel: a sidebar listing agents by group, a recent activity feed, and agent cards with actions" width="2640" height="1680" loading="lazy">
-    <figcaption class="illus">An example fleet — agent names and activity are made up for this picture.</figcaption></figure>
+  <p class="lede" style="margin-bottom:24px">Every agent is an icon you can name, colour and drag into groups. The icon itself tells you how the agent is: a spinning ring while it rebuilds, a mark for each app that reaches it, a dot when it has said something you haven't read. Click one to talk to it; everything about it lives behind one settings sheet. It's a web page on your own machine — no cloud dashboard, nothing to log in to but this.</p>
+  <figure class="shot"><img src="screenshot.png" alt="The Hatchabot home screen: a big icon for the Hatchabot manager agent, then the household's agents as labelled icons grouped into Family, Household and Money, each showing its status and the apps that reach it" width="2240" height="1960" loading="lazy">
+    <figcaption class="illus">An example fleet — the agents and their names are made up for this picture.</figcaption></figure>
+  <div class="grid cols-2" style="margin-top:34px;align-items:center">
+    <div>
+      <h3 style="margin-top:0">A manager agent, not a menu</h3>
+      <p>The big icon at the top is your Hatchabot agent. Ask it in plain words — "which agents look unhealthy?", "make a travel agent for the Sicily trip" — and it does the reading itself. Anything that would <i>change</i> something comes back as a card you confirm, on the home screen or in Telegram, with what it will do and how risky it is. It runs on whichever AI you already have, and it can only propose: Hatchabot carries the change out.</p>
+    </div>
+    <figure class="shot" style="margin:0"><img src="screenshot-agent.png" alt="One agent's settings sheet: status, name and icon, which AI it uses, its group, the messaging apps that reach it, and health checks" width="2240" height="1520" loading="lazy"></figure>
+  </div>
   <div class="grid cols-2" style="margin-top:34px;align-items:center">
     <div>
       <h3 style="margin-top:0">Know what your plan is spending</h3>
       <p>Agents share one subscription, so one busy agent can use up everyone's limit. Each AI source shows requests and tokens for the last 5 hours and 7 days, which agents are the heaviest, and a red banner the moment calls start getting refused.</p>
     </div>
-    <figure class="shot" style="margin:0"><img src="screenshot-usage.png" alt="Usage for an AI source: requests and tokens for the last 5 hours and 7 days, a 7-day chart, and the agents using it most" width="1640" height="800" loading="lazy"></figure>
+    <figure class="shot" style="margin:0"><img src="screenshot-usage.png" alt="Usage for an AI source: requests and tokens for the last 5 hours and 7 days, a 7-day chart, and the agents using it most" width="2240" height="1120" loading="lazy"></figure>
   </div>
 </div></section>
 
@@ -104,6 +111,8 @@
     <div class="card"><span class="ico">🔑</span><h3>Your accounts and files, scoped</h3><p>Per agent: a folder, a git repo, a Google account that can read mail but never send. Each agent gets what its job needs and nothing else.</p></div>
     <div class="card"><span class="ico">⏰</span><h3>Work while you sleep</h3><p>Scheduled tasks, and event-triggered ones where a zero-cost check decides whether to wake the model at all. Agents message you first when it matters.</p></div>
     <div class="card"><span class="ico">🤝</span><h3>Agents that consult each other</h3><p>Your investing agent asks your tax agent mid-task — with scoped tokens, loop guards and rate limits.</p></div>
+    <div class="card"><span class="ico">💬</span><h3>Reachable where people already are</h3><p>Telegram, Slack or Discord — an agent can be on one, several, or none at all and answer in the web app instead. Each agent has its own bot; strangers get a code you approve, not a conversation.</p></div>
+    <div class="card"><span class="ico">🐣</span><h3>A manager you can talk to</h3><p>Ask the Hatchabot agent to make, fix, move or share an agent. It can read everything and change nothing: every change comes back as a card you confirm here or in Telegram.</p></div>
     <div class="card"><span class="ico">📊</span><h3>Run like infrastructure</h3><p>Health, usage per source and per agent, an audit trail, nightly backups with a restore drill, and upgrades you try on one agent before the fleet.</p></div>
   </div>
   <p class="note">Built on <b>OpenClaw</b>, the open-source agent runtime: every Hatchabot agent is a stock OpenClaw gateway in its own Docker container. Hatchabot adds the layer OpenClaw leaves to you — many isolated installs, run as a fleet, by more than one person.</p>
@@ -169,9 +178,9 @@
   <p class="eyebrow">How it works</p>
   <h2>One control plane, one container per agent</h2>
   <div class="flow">
-    <div class="box"><b>Your family</b><p>Telegram on their phones — each agent is a contact.</p></div>
+    <div class="box"><b>Your family</b><p>Telegram, Slack or Discord on their phones — each agent is a contact — or the Hatchabot app itself.</p></div>
     <div class="box"><b>Control plane</b><p>Node + SQLite on your machine: registry, encrypted secrets, scheduler, health, backups, audit trail.</p></div>
-    <div class="box"><b>Agent containers</b><p>One OpenClaw gateway per agent, with its own bot, volume and credentials — dozens on one box.</p></div>
+    <div class="box"><b>Agent containers</b><p>One OpenClaw gateway per agent, with its own bots, volume and credentials — dozens on one box.</p></div>
     <div class="box"><b>AI &amp; data</b><p>Claude Max or API · Gemini · a local model · folders · git repos · a Google account.</p></div>
   </div>
   <p class="note">Each agent's home directory is a Docker volume: persona, memory, sessions, tools. The runtime image is shared, versioned and swapped under an agent without touching the volume — so an upgrade or rebuild never costs an agent its memory.</p>
@@ -182,18 +191,18 @@
   <h2>Your first agent in 15 minutes</h2>
   <div class="install-grid">
     <ol class="steps">
-      <li><h3>Make a Telegram bot</h3><p>In Telegram, open <a href="https://t.me/BotFather">@BotFather</a>, send <code>/newbot</code>, pick a name, and keep the token it gives you.</p></li>
+      <li><h3>Make a Telegram bot (optional)</h3><p>In Telegram, open <a href="https://t.me/BotFather">@BotFather</a>, send <code>/newbot</code>, pick a name, and keep the token it gives you. You can skip this and talk to your agents in the app, then add Telegram, Slack or Discord later.</p></li>
       <li><h3>Get Claude ready</h3><p>Install the Claude CLI with <code>npm i -g @anthropic-ai/claude-code</code>, log in once, then run <code>claude setup-token</code> and keep that token too.</p></li>
       <li><h3>Install Hatchabot</h3><p>On the computer that stays on, run:</p>
         <div class="cmd"><pre id="installCmd">bash -c "$(curl -fsSL https://hatchabot.com/install.sh)"</pre><button type="button" data-copy="installCmd">Copy</button></div>
         <p class="small">It checks for git, Docker and Node 22 (and offers to install what's missing), fetches the latest release, pulls the pre-built runtime image and installs the background service. <code>hatchabot doctor</code> checks the result.</p></li>
       <li><h3>Open the app</h3><p>Go to <code>http://localhost:8080</code>. A setup wizard takes the Claude token and the bot token, then creates your first agent.</p></li>
-      <li><h3>Say hi</h3><p>Open the agent's Telegram link and send a message. It will still remember this conversation next year.</p></li>
+      <li><h3>Say hi</h3><p>Click its icon to chat in the app, or open its Telegram link and send a message. It will still remember this conversation next year.</p></li>
     </ol>
     <div class="card">
       <h3>You need</h3>
       <p style="margin-bottom:10px">A <b>Linux or macOS computer that stays on</b>, with Docker and Node 22+ — a Mac mini, a home server, an old laptop.</p>
-      <p style="margin-bottom:10px">A <b>Telegram account</b>.</p>
+      <p style="margin-bottom:10px">Optionally a <b>Telegram, Slack or Discord</b> account, if you want to reach your agents from your phone.</p>
       <p style="margin-bottom:18px">An <b>AI</b>: a Claude subscription (Pro for a couple of agents, Max for a household), an API key, or a local model with no account at all.</p>
       <h3>Read more</h3>
       <p><a href="https://github.com/hatchabot/hatchabot/blob/main/docs/quickstart.md">Quick start</a> · <a href="https://github.com/hatchabot/hatchabot/blob/main/docs/why-hatchabot.md">Philosophy</a> · <a href="https://github.com/hatchabot/hatchabot/blob/main/docs/deck/hatchabot-deck.pdf">Slide deck</a> · <a href="https://github.com/hatchabot/hatchabot/releases">Releases</a> · <a href="https://github.com/hatchabot/hatchabot/blob/main/SECURITY.md">Security</a></p>
@@ -202,7 +211,7 @@
 </div></section>
 
 <section class="dark" style="padding-block:34px"><div class="wrap">
-  <div class="strip"><span>Open source, MIT</span><span>978 automated tests</span><span>15 full audits</span><span>Pre-built images for arm64 and amd64</span><span>Tagged releases with notes</span></div>
+  <div class="strip"><span>Open source, MIT</span><span>1,186 automated tests</span><span>18 full audits</span><span>Pre-built images for arm64 and amd64</span><span>Tagged releases with notes</span></div>
 </div></section>
 
 <section id="faq"><div class="wrap" style="max-width:860px">
@@ -211,9 +220,9 @@
   <details class="faq"><summary>Do I need to be technical?</summary><p>You need to be comfortable pasting one command into a terminal, once. After that everything happens in the web app and in Telegram. The people you invite need nothing but Telegram.</p></details>
   <details class="faq"><summary>What does it cost?</summary><p>The software is free and open source (MIT). You bring the hardware and the AI: one Claude Pro or Max subscription runs every agent in the household for a flat monthly fee — the rest of the family doesn't need their own plan to use the agents you set up for them. An API key is billed per token instead, and a local model costs nothing per message.</p></details>
   <details class="faq"><summary>What hardware do I need?</summary><p>Any Linux or macOS computer that stays on and runs Docker. The runtime image is about 2 GB, and each agent is one container with its own volume — a Mac mini comfortably runs a household's worth. A second machine can host agents too, over Tailscale.</p></details>
-  <details class="faq"><summary>Where does my data go?</summary><p>Agents, their memory and your credentials live on your machine. Messages travel through Telegram, and each turn is sent to the AI provider you chose for that agent — or to nobody, if the agent runs on a local model.</p></details>
+  <details class="faq"><summary>Where does my data go?</summary><p>Agents, their memory and your credentials live on your machine. Messages travel through whichever app you use (Telegram, Slack or Discord — none, if you chat in the app), and each turn is sent to the AI provider you chose for that agent — or to nobody, if the agent runs on a local model.</p></details>
   <details class="faq"><summary>Is it secure?</summary><p>Every agent runs in its own container with its own bot and credentials, secrets are encrypted at rest, and the app is reached over your private Tailscale network rather than an open port. A daily posture check flags agents that combine a wide audience with a powerful capability. The code has been through fifteen full audits; see <a href="https://github.com/hatchabot/hatchabot/blob/main/SECURITY.md">SECURITY.md</a> to report an issue.</p></details>
-  <details class="faq"><summary>Why Telegram?</summary><p>It's free, it's on every platform, and bots are first-class: a new one takes a minute at @BotFather, and each agent gets a real identity people already know how to message — with group chats and deep links, and nothing for us to ship or for your family to install. A free account can own 20 bots.</p></details>
+  <details class="faq"><summary>Does it have to be Telegram?</summary><p>No. Telegram is the easiest start — it's free, it's on every platform, and a new bot takes a minute at @BotFather — but an agent can be on <b>Slack</b> or <b>Discord</b> instead or as well, or on nothing at all: you then talk to it in the Hatchabot app itself. Slack and Discord each need a small app of their own, which the setup sheet walks you through in three steps. All three connect outward from your machine, so nothing of yours has to be reachable from the internet.</p></details>
   <details class="faq"><summary>How is this different from running OpenClaw myself?</summary><p>Every Hatchabot agent <i>is</i> an OpenClaw gateway. Hatchabot gives each one its own isolated install and adds what a fleet needs: creating, rebuilding, moving and backing up agents; inviting people; managing credentials once; and upgrading one agent at a time. For a single personal agent, plain OpenClaw is fine.</p></details>
 </div></section>
 

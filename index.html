@@ -26,6 +26,7 @@
   <div>
     <h1>Your AI should be a staff, not a search box.</h1>
     <p class="lede">ChatGPT and Claude give you one brilliant assistant, in their app, for you. Hatchabot is an <b>open-source agentic operating system</b>: it turns the plan you already pay for into a staff of agents that live on a computer you own — each with its own job and memory, each a Telegram contact your whole family can message.</p>
+    <p class="lede" style="margin-top:-6px"><b>And it manages itself.</b> Hatchabot comes with its own agent — a manager you talk to in plain words. "Which agents look unhealthy?" "Make a travel agent for the Sicily trip." It reads everything, changes nothing, and hands you a card to confirm.</p>
     <div class="formula" aria-label="OpenClaw plus Docker plus Telegram equals Hatchabot"><span class="chip">OpenClaw</span>+<span class="chip">Docker</span>+<span class="chip">Telegram</span>=<span class="eq">Hatchabot</span></div>
     <p class="formula-note">the open-source agent runtime · one isolated container per agent · a front door people already have — Telegram, Slack, Discord, or just the web app</p>
     <div class="cmd"><pre id="heroCmd">bash -c "$(curl -fsSL https://hatchabot.com/install.sh)"</pre><button type="button" data-copy="heroCmd">Copy</button></div>
@@ -106,13 +107,13 @@
   <p class="eyebrow">Features</p>
   <h2>What a staff can do that an assistant can't</h2>
   <div class="grid cols-3">
+    <div class="card"><span class="ico">🐣</span><h3>A manager that runs the fleet</h3><p>Hatchabot's own agent, on whichever AI you already pay for. Ask it to make, fix, move, share or rebuild an agent; it reads health, logs, usage and files, and every change comes back as a card you confirm. It lives in a network jail with a key that can only propose — and it messages your phone when something is waiting.</p></div>
     <div class="card"><span class="ico">⚡</span><h3>A new agent in a minute</h3><p>A name, a paragraph and a bot token. Clone one that works, import a template someone shared, keep a launchpad of ones you're planning.</p></div>
     <div class="card"><span class="ico">🧠</span><h3>A different brain per job</h3><p>Claude, Gemini or a local model, switchable live. Cheap models for simple jobs, the best one where it matters — or nothing per message at all.</p></div>
     <div class="card"><span class="ico">🔑</span><h3>Your accounts and files, scoped</h3><p>Per agent: a folder, a git repo, a Google account that can read mail but never send. Each agent gets what its job needs and nothing else.</p></div>
     <div class="card"><span class="ico">⏰</span><h3>Work while you sleep</h3><p>Scheduled tasks, and event-triggered ones where a zero-cost check decides whether to wake the model at all. Agents message you first when it matters.</p></div>
     <div class="card"><span class="ico">🤝</span><h3>Agents that consult each other</h3><p>Your investing agent asks your tax agent mid-task — with scoped tokens, loop guards and rate limits.</p></div>
     <div class="card"><span class="ico">💬</span><h3>Reachable where people already are</h3><p>Telegram, Slack or Discord — an agent can be on one, several, or none at all and answer in the web app instead. Each agent has its own bot; strangers get a code you approve, not a conversation.</p></div>
-    <div class="card"><span class="ico">🐣</span><h3>A manager you can talk to</h3><p>Ask the Hatchabot agent to make, fix, move or share an agent. It can read everything and change nothing: every change comes back as a card you confirm — and it tells you on Telegram when one is waiting.</p></div>
     <div class="card"><span class="ico">📊</span><h3>Run like infrastructure</h3><p>Health, usage per source and per agent, an audit trail, nightly backups with a restore drill, and upgrades you try on one agent before the fleet.</p></div>
   </div>
   <p class="note">Built on <b>OpenClaw</b>, the open-source agent runtime: every Hatchabot agent is a stock OpenClaw gateway in its own Docker container. Hatchabot adds the layer OpenClaw leaves to you — many isolated installs, run as a fleet, by more than one person.</p>

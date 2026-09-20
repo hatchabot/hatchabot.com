@@ -75,22 +75,22 @@
 <section id="panel"><div class="wrap">
   <p class="eyebrow">The control panel</p>
   <h2>Your whole staff on one page</h2>
-  <p class="lede" style="margin-bottom:24px">Every agent is an icon you can name, colour and drag into groups. The icon itself tells you how the agent is: a spinning ring while it rebuilds, a mark for each app that reaches it, a dot when it has said something you haven't read. Click one to talk to it; everything about it lives behind one settings sheet. It's a web page on your own machine — no cloud dashboard, nothing to log in to but this.</p>
-  <figure class="shot"><img src="screenshot.png" alt="The Hatchabot home screen: a big icon for the Hatchabot manager agent, then the household's agents as labelled icons grouped into Family, Household and Money, each showing its status and the apps that reach it" width="2240" height="1960" loading="lazy">
+  <p class="lede" style="margin-bottom:24px">Every agent is an icon you can name, colour and drag into groups. The icon itself tells you how the agent is: a spinning ring while it rebuilds, a mark for each app that reaches it, a dot when it has said something you haven't read. Beside the manager, a row of tiles counts what matters — how many are awake, what the fleet asked your AI in the last five hours, anyone knocking, anything waiting for you — and each tile opens the screen that deals with it. It's a web page on your own machine — no cloud dashboard, nothing to log in to but this.</p>
+  <figure class="shot"><img src="screenshot.png" alt="The Hatchabot home screen: a big icon for the Hatchabot manager agent with dashboard tiles beside it, then the household's agents as labelled icons grouped into Family, Household and Money, each showing its status and the apps that reach it" width="3000" height="1800" loading="lazy">
     <figcaption class="illus">An example fleet — the agents and their names are made up for this picture.</figcaption></figure>
   <div class="grid cols-2" style="margin-top:34px;align-items:center">
     <div>
       <h3 style="margin-top:0">A manager agent, not a menu</h3>
-      <p>The big icon at the top is your Hatchabot agent. Ask it in plain words — "which agents look unhealthy?", "make a travel agent for the Sicily trip" — and it does the reading itself. Anything that would <i>change</i> something comes back as a card you confirm, on the home screen or in Telegram, with what it will do and how risky it is. It runs on whichever AI you already have, and it can only propose: Hatchabot carries the change out.</p>
+      <p>The big icon at the top is your Hatchabot agent. Ask it in plain words — "which agents look unhealthy?", "make a travel agent for the Sicily trip" — and it does the reading itself. Anything that would <i>change</i> something comes back as a card you confirm on the home screen, with what it will do and how risky it is — and if you give the manager its own Telegram bot, it messages your phone to say a card is waiting. It runs on whichever AI you already have, and it can only propose: Hatchabot carries the change out.</p>
     </div>
-    <figure class="shot" style="margin:0"><img src="screenshot-agent.png" alt="One agent's settings sheet: status, name and icon, which AI it uses, its group, the messaging apps that reach it, and health checks" width="2240" height="1520" loading="lazy"></figure>
+    <figure class="shot" style="margin:0"><img src="screenshot-agent.png" alt="One agent's settings sheet: status, name and icon, which AI it uses, its group, the messaging apps that reach it, and health checks" width="2800" height="1600" loading="lazy"></figure>
   </div>
   <div class="grid cols-2" style="margin-top:34px;align-items:center">
     <div>
       <h3 style="margin-top:0">Know what your plan is spending</h3>
       <p>Agents share one subscription, so one busy agent can use up everyone's limit. Each AI source shows requests and tokens for the last 5 hours and 7 days, which agents are the heaviest, and a red banner the moment calls start getting refused.</p>
     </div>
-    <figure class="shot" style="margin:0"><img src="screenshot-usage.png" alt="Usage for an AI source: requests and tokens for the last 5 hours and 7 days, a 7-day chart, and the agents using it most" width="2240" height="1120" loading="lazy"></figure>
+    <figure class="shot" style="margin:0"><img src="screenshot-usage.png" alt="Usage for an AI source: requests and tokens for the last 5 hours and 7 days, a 7-day chart, and the agents using it most" width="2800" height="1240" loading="lazy"></figure>
   </div>
 </div></section>
 
@@ -112,7 +112,7 @@
     <div class="card"><span class="ico">⏰</span><h3>Work while you sleep</h3><p>Scheduled tasks, and event-triggered ones where a zero-cost check decides whether to wake the model at all. Agents message you first when it matters.</p></div>
     <div class="card"><span class="ico">🤝</span><h3>Agents that consult each other</h3><p>Your investing agent asks your tax agent mid-task — with scoped tokens, loop guards and rate limits.</p></div>
     <div class="card"><span class="ico">💬</span><h3>Reachable where people already are</h3><p>Telegram, Slack or Discord — an agent can be on one, several, or none at all and answer in the web app instead. Each agent has its own bot; strangers get a code you approve, not a conversation.</p></div>
-    <div class="card"><span class="ico">🐣</span><h3>A manager you can talk to</h3><p>Ask the Hatchabot agent to make, fix, move or share an agent. It can read everything and change nothing: every change comes back as a card you confirm here or in Telegram.</p></div>
+    <div class="card"><span class="ico">🐣</span><h3>A manager you can talk to</h3><p>Ask the Hatchabot agent to make, fix, move or share an agent. It can read everything and change nothing: every change comes back as a card you confirm — and it tells you on Telegram when one is waiting.</p></div>
     <div class="card"><span class="ico">📊</span><h3>Run like infrastructure</h3><p>Health, usage per source and per agent, an audit trail, nightly backups with a restore drill, and upgrades you try on one agent before the fleet.</p></div>
   </div>
   <p class="note">Built on <b>OpenClaw</b>, the open-source agent runtime: every Hatchabot agent is a stock OpenClaw gateway in its own Docker container. Hatchabot adds the layer OpenClaw leaves to you — many isolated installs, run as a fleet, by more than one person.</p>

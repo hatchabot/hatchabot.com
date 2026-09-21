@@ -49,7 +49,7 @@
   <h2>“Can't ChatGPT or Claude already do this?”</h2>
   <p class="lede" style="margin-bottom:28px">Fair question — and more so every year. They remember you now. They run tasks on a schedule. They read your Drive. For one person in one app they are excellent, and Hatchabot doesn't try to beat them at it: it <i>uses</i> one of them as the brain. Four things change once the assistant has to serve a household.</p>
   <div class="grid cols-2">
-    <div class="card"><h3>Everyone gets agents. Nobody gets an account.</h3><p>Sharing an assistant over there means everyone signs in: ChatGPT projects invite people who have their own accounts, Claude's want a paid seat each. Here your family just messages a contact in Telegram — no app, no login, no extra seat — and each person can have their own agents, with their own memory, on your one plan.</p></div>
+    <div class="card"><h3>Everyone gets agents. Nobody needs a seat.</h3><p>Sharing an assistant over there means everyone has an account with them: ChatGPT projects invite people who have their own, Claude's want a paid seat each. Here your family just messages a contact in Telegram — no app, no AI account, no extra seat. Anyone who wants to make agents of their own gets a sign-in on your machine, not a subscription, and every agent runs on your one plan.</p></div>
     <div class="card"><h3>The memory is a file you own.</h3><p>Both remember you. Neither lets you open that memory, correct a wrong fact, back it up, or carry it to another company — Claude will import memories <i>from</i> the others, but nothing comes back out. A Hatchabot agent's memory is a text file on your disk, and it survives a rebuild, a change of model, and a move to another machine.</p></div>
     <div class="card"><h3>A staff, not one generalist.</h3><p>One assistant answers your tax question, your kid's homework and your condo board in the same voice, from the same context. Hatchabot agents are separate by design — their own persona, model, data and people — and they can consult each other mid-task, which no consumer chat app lets an ordinary subscriber do.</p></div>
     <div class="card"><h3>It runs on your machine, with your things, scoped.</h3><p>Their scheduled tasks run in their cloud, with the tools they chose, across your whole account. A Hatchabot agent runs on your computer with exactly what its job needs: this folder, that git repo, a Google account that may read mail but never send. Put one on a local model and nothing leaves the house at all.</p></div>
@@ -61,7 +61,7 @@
   <div>
     <p class="eyebrow">One subscription, the whole household</p>
     <h2>Everyone gets their own agents. You pay for one plan.</h2>
-    <p class="lede">A tutor for the kids, a planner the whole family shares, your own tax and investing advisors — every agent in the house runs on the same Claude plan, on your machine. Nobody else needs an AI account, an app or a password: they just message the agents made for them on Telegram.</p>
+    <p class="lede">A tutor for the kids, a planner the whole family shares, your own tax and investing advisors — every agent in the house runs on the same Claude plan, on your machine. Nobody else needs an AI account or an app: they just message the agents made for them on Telegram.</p>
     <p class="small">Your credential stays on your computer, and people talk to your agents, never to your account. Prefer to pay per use, or not at all? Any agent can run on an API key or a local model instead.</p>
   </div>
   <div class="tally" aria-label="Example household">
@@ -192,12 +192,12 @@
   <h2>Your first agent in 15 minutes</h2>
   <div class="install-grid">
     <ol class="steps">
-      <li><h3>Make a Telegram bot (optional)</h3><p>In Telegram, open <a href="https://t.me/BotFather">@BotFather</a>, send <code>/newbot</code>, pick a name, and keep the token it gives you. You can skip this and talk to your agents in the app, then add Telegram, Slack or Discord later.</p></li>
+      <li><h3>Make a Telegram bot (optional)</h3><p>In Telegram, open <a href="https://t.me/BotFather">@BotFather</a>, send <code>/newbot</code>, pick a name, and keep the token it gives you. You can skip this and talk to your agents in the app, then add Telegram later.</p></li>
       <li><h3>Get Claude ready</h3><p>Install the Claude CLI with <code>npm i -g @anthropic-ai/claude-code</code>, log in once, then run <code>claude setup-token</code> and keep that token too.</p></li>
       <li><h3>Install Hatchabot</h3><p>On the computer that stays on, run:</p>
         <div class="cmd"><pre id="installCmd">bash -c "$(curl -fsSL https://hatchabot.com/install.sh)"</pre><button type="button" data-copy="installCmd">Copy</button></div>
         <p class="small">It checks for git, Docker and Node 22 (and offers to install what's missing), fetches the latest release, pulls the pre-built runtime image and installs the background service. <code>hatchabot doctor</code> checks the result.</p></li>
-      <li><h3>Open the app</h3><p>Go to <code>http://localhost:8080</code>. A setup wizard takes the Claude token and the bot token, then creates your first agent.</p></li>
+      <li><h3>Open the app</h3><p>Go to <code>http://localhost:8080</code> on that computer and create your account — you become its owner. The setup guide then takes the Claude token and the bot token, creates your first agent, and can turn on HTTPS over Tailscale so it opens on your phone.</p></li>
       <li><h3>Say hi</h3><p>Click its icon to chat in the app, or open its Telegram link and send a message. It will still remember this conversation next year.</p></li>
     </ol>
     <div class="card">
@@ -212,7 +212,7 @@
 </div></section>
 
 <section class="dark" style="padding-block:34px"><div class="wrap">
-  <div class="strip"><span>Open source, MIT</span><span>1,188 automated tests</span><span>19 full audits</span><span>Pre-built images for arm64 and amd64</span><span>Tagged releases with notes</span></div>
+  <div class="strip"><span>Open source, MIT</span><span>1,200+ automated tests</span><span>24 full audits</span><span>Pre-built images for arm64 and amd64</span><span>Tagged releases with notes</span></div>
 </div></section>
 
 <section id="faq"><div class="wrap" style="max-width:860px">
@@ -223,8 +223,8 @@
   <details class="faq"><summary>What hardware do I need?</summary><p>Any Linux or macOS computer that stays on and runs Docker. The runtime image is about 2 GB, and each agent is one container with its own volume — a Mac mini comfortably runs a household's worth. A second machine can host agents too, over Tailscale.</p></details>
   <details class="faq"><summary>Where does my data go?</summary><p>Agents, their memory and your credentials live on your machine. Messages travel through Telegram (or through nothing at all, if you chat in the app), and each turn is sent to the AI provider you chose for that agent — or to nobody, if the agent runs on a local model.</p></details>
   <details class="faq"><summary>Can a stranger message my agents?</summary><p>They can find a bot — Telegram usernames are public — but they get silence. An agent only listens to people you invited or who already use one of your agents; an invite can even name the one person it is for. Anyone else's message is dropped before it reaches the agent, and you are never bothered with it.</p></details>
-  <details class="faq"><summary>What if someone forgets their password?</summary><p>Everyone in the household has their own sign-in. If a family member forgets theirs, you send them a one-time reset link from the app and they choose a new one — you never see it. If you forget yours, "Forgot password?" sends a link to your own Telegram. No email server, and no terminal.</p></details>
-  <details class="faq"><summary>Is it secure?</summary><p>Every agent runs in its own container with its own bot and credentials, secrets are encrypted at rest, and the app is reached over your private Tailscale network rather than an open port. A daily posture check flags agents that combine a wide audience with a powerful capability. The code has been through twenty-four full audits, the latest a security review of every sign-in and invite path; see <a href="https://github.com/hatchabot/hatchabot/blob/main/SECURITY.md">SECURITY.md</a> to report an issue.</p></details>
+  <details class="faq"><summary>What if someone forgets their password?</summary><p>Everyone in the household has their own sign-in. If a family member forgets theirs, you send them a one-time reset link from the app and they choose a new one — you never see it. If you forget yours, "Forgot password?" sends a link to the Telegram account you linked — no email server needed. (With nothing linked, the owner resets it with one command on the machine.)</p></details>
+  <details class="faq"><summary>Is it secure?</summary><p>Every agent runs in its own container with its own bot and credentials, secrets are encrypted at rest, and the app is meant to be reached over your private Tailscale network, never a port opened to the internet — the setup guide turns that on in one press. Everyone signs in as themselves. A daily posture check flags agents that combine a wide audience with a powerful capability. The code has been through twenty-four full audits, the latest a security review of every sign-in and invite path; see <a href="https://github.com/hatchabot/hatchabot/blob/main/SECURITY.md">SECURITY.md</a> to report an issue.</p></details>
   <details class="faq"><summary>Does it have to be Telegram?</summary><p>No. Telegram is the easiest start — it's free, it's on every platform, and a new bot takes a minute at @BotFather — or an agent can be on nothing at all: you then talk to it in the Hatchabot app itself. <b>Slack</b> and <b>Discord</b> are built and being tested against real workspaces before they are switched on. Every chat app connects outward from your machine, so nothing of yours has to be reachable from the internet.</p></details>
   <details class="faq"><summary>How is this different from running OpenClaw myself?</summary><p>Every Hatchabot agent <i>is</i> an OpenClaw gateway. Hatchabot gives each one its own isolated install and adds what a fleet needs: creating, rebuilding, moving and backing up agents; inviting people; managing credentials once; and upgrading one agent at a time. For a single personal agent, plain OpenClaw is fine.</p></details>
 </div></section>

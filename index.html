@@ -212,13 +212,32 @@
 </div></footer>
 
 <script>
+// Copy the install command. The Clipboard API is refused in some places — in-app
+// browsers (LinkedIn, Instagram), unfocused tabs, older Safari — so fall back to
+// the older copy command inside the same click, and only if both fail select the
+// text and say how to copy it.
+function copyViaTextarea(text) {
+  var t = document.createElement('textarea');
+  t.value = text; t.setAttribute('readonly', ''); t.style.position = 'fixed'; t.style.opacity = '0';
+  document.body.appendChild(t); t.select();
+  var ok = false;
+  try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+  document.body.removeChild(t);
+  return ok;
+}
 document.querySelectorAll('[data-copy]').forEach(function (b) {
   b.addEventListener('click', function () {
-    var text = document.getElementById(b.dataset.copy).textContent;
+    var el = document.getElementById(b.dataset.copy);
+    var text = el.textContent;
     var done = function () { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1500); };
-    if (navigator.clipboard) navigator.clipboard.writeText(text).then(done, function () { fallback(); });
+    var selectIt = function () {
+      var r = document.createRange(); r.selectNodeContents(el);
+      var s = getSelection(); s.removeAllRanges(); s.addRange(r);
+      b.textContent = 'Press ⌘/Ctrl+C';
+    };
+    var fallback = function () { if (copyViaTextarea(text)) done(); else selectIt(); };
+    if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(done, fallback);
     else fallback();
-    function fallback() { var r = document.createRange(); r.selectNodeContents(document.getElementById(b.dataset.copy)); var s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Press ⌘/Ctrl+C'; }
   });
 });
 </script>

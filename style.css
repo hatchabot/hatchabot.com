@@ -45,7 +45,7 @@ section.dark { background:var(--dark); color:var(--dark-text) }
 /* hero */
 .hero { background:var(--accent); padding-block:56px 60px }
 .hero-grid { display:grid; grid-template-columns:minmax(0,1.25fr) minmax(0,1fr); gap:48px; align-items:center }
-@media (max-width:900px) { .hero-grid { grid-template-columns:1fr; gap:36px } }
+@media (max-width:900px) { .hero-grid { grid-template-columns:minmax(0,1fr); gap:36px } }
 .formula { display:flex; align-items:center; gap:10px; flex-wrap:wrap; font-family:var(--display); font-weight:700; font-size:17px; margin:24px 0 6px }
 .formula .chip { display:inline-block; background:var(--ink); color:var(--dark-text); border-radius:9px; padding:6px 13px }
 .formula .eq { display:inline-block; border:2.5px solid var(--ink); border-radius:9px; padding:4px 12px }
@@ -67,8 +67,8 @@ section.dark { background:var(--dark); color:var(--dark-text) }
 .illus { font-size:12px; text-align:center; margin-top:10px; opacity:.8 }
 
 /* install one-liner */
-.cmd { display:flex; align-items:stretch; background:var(--ink); color:#f1ede4; border-radius:12px; overflow:hidden; border:2px solid var(--ink); margin:14px 0 8px; max-width:640px }
-.cmd pre { margin:0; padding:14px 16px; flex:1; min-width:0; overflow-x:auto; font:500 15px/1.5 var(--mono); white-space:pre-wrap; overflow-wrap:normal; word-break:normal }
+.cmd { display:flex; align-items:stretch; background:var(--ink); color:#f1ede4; border-radius:12px; overflow:hidden; border:2px solid var(--ink); margin:14px 0 8px; max-width:720px }
+.cmd pre { margin:0; padding:14px 16px; flex:1; min-width:0; overflow-x:auto; font:500 15px/1.5 var(--mono); white-space:pre; overflow-wrap:normal; word-break:normal }
 .cmd pre::before { content:"$ "; color:var(--accent) }
 .cmd button { flex:none; border:0; border-left:1px solid #3a3d44; background:#262930; color:#f1ede4; font:700 14px var(--body); padding:0 16px; cursor:pointer }
 .cmd button:hover { background:#30343c }

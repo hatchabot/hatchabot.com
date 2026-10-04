@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hatchabot — your AI should be a staff, not a search box</title>
+<title>Hatchabot — your AI should be your own staff, not a search box</title>
 <meta name="description" content="An open-source agentic operating system. Hatchabot runs a staff of AI agents on a computer you own — each with its own job and memory you can read — tied to no frontier lab: you buy inference, the rest is MIT-licensed code you control.">
 <meta name="theme-color" content="#e8a33d">
-<meta property="og:title" content="Hatchabot — your AI should be a staff, not a search box">
+<meta property="og:title" content="Hatchabot — your AI should be your own staff, not a search box">
 <meta property="og:description" content="One assistant is not a staff. Hatchabot runs many purpose-built AI agents on hardware you own, with memory in files you keep, reachable by the people you let in, through Telegram.">
 <meta property="og:image" content="https://hatchabot.com/icon.png">
 <meta property="og:url" content="https://hatchabot.com">
@@ -18,13 +18,13 @@
 <div class="wrap">
   <header class="top">
     <a class="brand" href="/"><img src="icon.png" alt=""> HATCHABOT</a>
-    <nav aria-label="Main"><a class="opt" href="#why">Why</a><a class="opt" href="#household">Household</a><a class="opt" href="#inference">Open source</a><a class="opt" href="#build">Build on it</a><a class="opt" href="#features">Features</a><a class="opt" href="#how">How it works</a><a href="#install">Install</a><a href="#faq">FAQ</a><a href="https://github.com/hatchabot/hatchabot">GitHub</a></nav>
+    <nav aria-label="Main"><a class="opt" href="#why">Why</a><a class="opt" href="#supervisor">Supervisor</a><a class="opt" href="#household">Household</a><a class="opt" href="#inference">Open source</a><a class="opt" href="#build">Build on it</a><a class="opt" href="#features">Features</a><a class="opt" href="#how">How it works</a><a href="#install">Install</a><a href="#faq">FAQ</a><a href="https://github.com/hatchabot/hatchabot">GitHub</a></nav>
   </header>
 </div>
 
 <section class="hero"><div class="wrap hero-grid">
   <div>
-    <h1>Your AI should be a staff, not a search box.</h1>
+    <h1>Your AI should be your own staff, not a search box.</h1>
     <p class="lede">ChatGPT and Claude give you one brilliant assistant, in their app, for you. Hatchabot is an <b>open-source agentic operating system</b>: it turns the plan you already pay for into a staff of agents that live on a computer you own — each with its own job and memory, each a Telegram contact your whole family can message.</p>
     <p class="lede" style="margin-top:-6px"><b>And it manages itself.</b> Hatchabot comes with its own agent — a manager you talk to in plain words. "Which agents look unhealthy?" "Make a travel agent for the Sicily trip." It reads everything, changes nothing, and hands you a card to confirm.</p>
     <div class="formula" aria-label="OpenClaw plus Docker plus Telegram equals Hatchabot"><span class="chip">OpenClaw</span>+<span class="chip">Docker</span>+<span class="chip">Telegram</span>=<span class="eq">Hatchabot</span></div>
@@ -55,6 +55,20 @@
     <div class="card"><h3>It runs on your machine, with your things, scoped.</h3><p>Their scheduled tasks run inside their app, with the tools they built, across your whole account. A Hatchabot agent runs on your computer with exactly what its job needs: this folder, that git repo, a Google account whose mail tool has sending switched off (a tool setting, not a Google permission — don't rely on it against someone determined). Put one on a local model and your conversations never go to an AI company. The agent still uses the internet for search and tools, and chat apps carry messages through their own servers.</p></div>
   </div>
   <p class="note">The honest version: if you're the only one using it and you're happy inside one app, the chat apps are more polished, need no setup, and are the better deal. Hatchabot is for when there are several jobs, several people, and things you'd rather keep on hardware you own. Comparisons describe the consumer apps as of September 2026.</p>
+</div></section>
+
+<section class="dark" id="supervisor"><div class="wrap">
+  <p class="eyebrow">The Hatchabot supervisor</p>
+  <h2>A supervisor that keeps every agent on the right model</h2>
+  <p class="lede" style="margin-bottom:28px">Your built-in Hatchabot agent also watches how every agent uses its AI. Its job: keep each one on the <b>least capable model that does its work well</b> — a cheaper model for an agent that's overserved, a stronger one for an agent that struggles. It proposes; you confirm every change.</p>
+  <div class="grid cols-2">
+    <div class="card"><span class="ico">⚖️</span><h3>A weekly review, on evidence</h3><p>Every Monday it reads a scorecard for each agent: what it's for, how much it works, how hard it leans on tools, how often it fails, and what it would cost on each model its AI source offers. Thin evidence or a small saving means no change — and it never wakes a sleeping agent to find out.</p></div>
+    <div class="card"><span class="ico">🛡</span><h3>A quality guard on every switch</h3><p>Every model change is recorded with the old model's figures. Within a week the new model is measured the same way; if failed turns or tool errors went up, Hatchabot proposes switching back. A card for a cheaper model spells out its risks before you decide.</p></div>
+    <div class="card"><span class="ico">💵</span><h3>The savings, shown</h3><p>Each switch to a cheaper model is counted against what the agent actually used since: one line — "Right-size: ≈ $12.40 this month" — on the Usage page and at the top of the weekly report.</p></div>
+    <div class="card"><span class="ico">🏷</span><h3>A cost on every tile</h3><p>Each agent's icon carries what its last week cost — "$4/wk" — and a Cost view lists the fleet most expensive first. The price list behind every figure is in the app, with the date it was checked.</p></div>
+  </div>
+  <p class="note"><b>Coming next, not shipped yet:</b> warnings when a conversation grows large, with compaction; spotting an agent stuck in a loop; checks on scheduled tasks and caching; and budgets.</p>
+  <p class="note" style="margin-top:8px">ChatGPT's Auto picks a model for each message, inside OpenAI's app, by its own rules; Claude's apps have you choose. Hatchabot does it per agent, under your control, with the evidence and the savings shown. Dollar figures are estimates — the tokens each agent actually used, at Anthropic's list API prices — and the ones above are examples. If you connect your own Claude plan instead, nothing is billed per token, so the figure is room in the plan's limits, not money.</p>
 </div></section>
 
 <section class="household" id="household"><div class="wrap household-grid">
@@ -89,7 +103,7 @@
   <div class="grid cols-2" style="margin-top:34px;align-items:center">
     <div>
       <h3 style="margin-top:0">Know what your agents are spending</h3>
-      <p>Agents share one AI account, so one busy agent can run up the bill or use up a plan's limit. Each AI source shows requests and tokens for the last 5 hours and 7 days, which agents are the heaviest, and a red banner the moment calls start getting refused.</p>
+      <p>Agents share one AI account, so one busy agent can run up the bill or use up a plan's limit. Each AI source shows requests and tokens for the last 5 hours and 7 days, which agents are the heaviest, and a red banner the moment calls start getting refused. Each agent's tile shows what its last week cost at API prices.</p>
     </div>
     <figure class="shot" style="margin:0"><img src="screenshot-usage.png" alt="Usage for an AI source: requests and tokens for the last 5 hours and 7 days, a 7-day chart, and the agents using it most" width="2800" height="1240" loading="lazy"></figure>
   </div>
@@ -107,7 +121,7 @@
   <p class="eyebrow">Features</p>
   <h2>What a staff can do that an assistant can't</h2>
   <div class="grid cols-3">
-    <div class="card"><span class="ico">🐣</span><h3>A manager that runs the fleet</h3><p>Hatchabot's own agent, on whichever AI you already pay for. Ask it to make, fix, rebuild, archive or clone an agent, or to invite someone; it reads health, logs, usage and files, and every change comes back as a card you confirm. <b>It also tells you what to add</b> — the gaps beside the agents you have, or a job one agent is quietly doing twice. It lives in a network jail with a key that can only propose, and it messages your phone when something is waiting.</p></div>
+    <div class="card"><span class="ico">🐣</span><h3>A manager that runs the fleet</h3><p>Hatchabot's own agent, on whichever AI you already pay for. Ask it to make, fix, rebuild, archive or clone an agent, or to invite someone; it reads health, logs, usage and files, and every change comes back as a card you confirm. <b>It also tells you what to add</b> — the gaps beside the agents you have, or a job one agent is quietly doing twice. It also <a href="#supervisor">supervises the fleet's models</a>, keeping each agent on the least capable one that does its job. It lives in a network jail with a key that can only propose, and it messages your phone when something is waiting.</p></div>
     <div class="card"><span class="ico">⚡</span><h3>A new agent in a minute</h3><p>A name, a paragraph and a bot token. Clone one that works, import a template someone shared, keep a launchpad of ones you're planning.</p></div>
     <div class="card"><span class="ico">🧠</span><h3>A different brain per job</h3><p>Claude, Gemini or a local model, per agent. Switch models within a source instantly; switching providers takes a rebuild and starts a fresh conversation, with memory kept. Cheap models for simple jobs, the best one where it matters — or nothing per message at all.</p></div>
     <div class="card"><span class="ico">🔑</span><h3>Your accounts and files, scoped</h3><p>Per agent: a folder, a git repo, a Google account whose mail tool has sending switched off (a tool setting, not a Google permission — don't rely on it against someone determined). Each agent gets what its job needs and nothing else — and its Files tab lets you browse what it made, open or download any of it, and drop files in for it to use.</p></div>

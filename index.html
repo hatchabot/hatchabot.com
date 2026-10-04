@@ -29,7 +29,7 @@
     <p class="lede" style="margin-top:-6px"><b>And it manages itself.</b> Hatchabot comes with its own agent — a manager you talk to in plain words. "Which agents look unhealthy?" "Make a travel agent for the Sicily trip." It reads everything, changes nothing, and hands you a card to confirm.</p>
     <div class="formula" aria-label="OpenClaw plus Docker plus Telegram equals Hatchabot"><span class="chip">OpenClaw</span>+<span class="chip">Docker</span>+<span class="chip">Telegram</span>=<span class="eq">Hatchabot</span></div>
     <p class="formula-note">the open-source agent runtime · one isolated container per agent · a front door people already have — Telegram, or just the web app</p>
-    <div class="cmd"><pre id="heroCmd">bash -c "$(curl -fsSL https://hatchabot.com/install.sh)"</pre><button type="button" data-copy="heroCmd">Copy</button></div>
+    <div class="cmd"><pre id="heroCmd">bash -c "$(curl -fsSL https://hatchabot.com/install.sh)"</pre></div>
     <p class="small" style="margin:0 0 22px;color:inherit;opacity:.85">One line on a Linux or macOS machine that stays on. Then the app walks you through your first agent.</p>
     <div class="cta"><a class="btn primary" href="#install">Get started</a><a class="btn ghost" href="https://github.com/hatchabot/hatchabot">Source on GitHub</a></div>
   </div>
@@ -200,7 +200,7 @@
       <li><h3>Make a Telegram bot (optional)</h3><p>In Telegram, open <a href="https://t.me/BotFather">@BotFather</a>, send <code>/newbot</code>, pick a name, and keep the token it gives you. You can skip this and talk to your agents in the app, then add Telegram later.</p></li>
       <li><h3>Get an AI key ready</h3><p>Create an API key at <a href="https://console.anthropic.com">console.anthropic.com</a> (billed per use). Or, if you have your own Claude Pro or Max plan, connect that instead: install Claude Code with <code>npm i -g @anthropic-ai/claude-code</code>, sign in, and run <code>claude setup-token</code>. That use is between you and Anthropic, under their terms, which can change.</p></li>
       <li><h3>Install Hatchabot</h3><p>On the computer that stays on, run:</p>
-        <div class="cmd"><pre id="installCmd">bash -c "$(curl -fsSL https://hatchabot.com/install.sh)"</pre><button type="button" data-copy="installCmd">Copy</button></div>
+        <div class="cmd"><pre id="installCmd">bash -c "$(curl -fsSL https://hatchabot.com/install.sh)"</pre></div>
         <p class="small">It checks for git, Docker and Node 22 (and offers to install what's missing), fetches the current stable release, pulls the pre-built runtime image and installs the background service. <code>hatchabot doctor</code> checks the result.</p></li>
       <li><h3>Open the app</h3><p>Go to <code>http://localhost:8080</code> on that computer and create your account — you become its owner. The setup guide then takes your API key (or token) and the bot token, creates your first agent, and can turn on HTTPS over Tailscale so it opens on your phone.</p></li>
       <li><h3>Say hi</h3><p>Click its icon to chat in the app, or open its Telegram link and send a message. It will still remember what matters from this conversation next year.</p></li>
@@ -239,35 +239,5 @@
   <p class="small">Hatchabot is an independent open-source project. OpenClaw, Claude, Telegram, Docker and Tailscale are trademarks of their respective owners.</p>
 </div></footer>
 
-<script>
-// Copy the install command. The Clipboard API is refused in some places — in-app
-// browsers (LinkedIn, Instagram), unfocused tabs, older Safari — so fall back to
-// the older copy command inside the same click, and only if both fail select the
-// text and say how to copy it.
-function copyViaTextarea(text) {
-  var t = document.createElement('textarea');
-  t.value = text; t.setAttribute('readonly', ''); t.style.position = 'fixed'; t.style.opacity = '0';
-  document.body.appendChild(t); t.select();
-  var ok = false;
-  try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
-  document.body.removeChild(t);
-  return ok;
-}
-document.querySelectorAll('[data-copy]').forEach(function (b) {
-  b.addEventListener('click', function () {
-    var el = document.getElementById(b.dataset.copy);
-    var text = el.textContent;
-    var done = function () { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1500); };
-    var selectIt = function () {
-      var r = document.createRange(); r.selectNodeContents(el);
-      var s = getSelection(); s.removeAllRanges(); s.addRange(r);
-      b.textContent = 'Press ⌘/Ctrl+C';
-    };
-    var fallback = function () { if (copyViaTextarea(text)) done(); else selectIt(); };
-    if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(done, fallback);
-    else fallback();
-  });
-});
-</script>
 </body>
 </html>

@@ -64,15 +64,25 @@
   <div class="grid cols-2">
     <div class="card"><span class="ico">⚖️</span><h3>The right model, on evidence</h3><p>Every week it reads a scorecard for each agent: what it's for, how hard it leans on tools, how often it fails, and what it would cost on each model its AI source offers. Thin evidence or a small saving means no change — and it never wakes a sleeping agent to find out.</p></div>
     <div class="card"><span class="ico">🛡</span><h3>A quality guard on every switch</h3><p>Every model change is recorded with the old model's figures. Within a week the new model is measured the same way; if failed turns or tool errors went up, Hatchabot proposes switching back. A card for a cheaper model spells out its risks before you decide.</p></div>
-    <div class="card"><span class="ico">🔁</span><h3>Loops, caught as they happen</h3><p>A chat message retried again and again, a scheduled task failing run after run, two agents consulting each other in circles: Hatchabot marks the tile, puts it under Needs you with the fix, and sends one message on Telegram. It clears itself when the loop stops.</p></div>
+    <div class="card"><span class="ico">🔁</span><h3>Loops, caught as they happen</h3><p>A chat message retried again and again, a scheduled task failing run after run, two agents consulting each other in circles: Hatchabot marks the tile, puts it under Needs you with the fix, and sends one message on Telegram. It clears itself when the loop stops. For a task that keeps failing, it proposes pausing it until it's fixed — a card you confirm.</p></div>
     <div class="card"><span class="ico">📏</span><h3>Conversations kept in size</h3><p>Every message re-sends the whole conversation, so a long one costs more on every turn. When one grows large, it proposes a compaction now, or a cap so the agent compacts on its own — each a card you confirm.</p></div>
     <div class="card"><span class="ico">🗓</span><h3>A weekly token review</h3><p>Once a week it checks the prompt cache, what scheduled tasks cost, how big the instruction files are and how much the agents think — and opens with the savings line: "Right-size: ≈ $12.40 this month", counted from what agents actually used since each switch.</p></div>
     <div class="card"><span class="ico">🏷</span><h3>A cost on every tile</h3><p>Each agent's icon carries what its last week cost — "$4/wk" — and a Cost view lists the fleet most expensive first. The price list behind every figure is in the app, with the date it was checked.</p></div>
   </div>
+  <div class="ask">
+    <h3>Ask it, in its chat</h3>
+    <ul>
+      <li>“Which agents cost the most, and why?”</li>
+      <li>“Is anything on Opus that doesn't need to be?”</li>
+      <li>“Which conversations are getting too long?”</li>
+      <li>“Is anything stuck in a loop?”</li>
+      <li>“What have this month's model changes saved?”</li>
+    </ul>
+  </div>
   <figure class="shot" style="margin-top:28px"><img src="screenshot-cost.png" alt="The home screen in View by Cost: agents banded by a week's cost at API prices — $10 to $50 a week, under $10 a week, no usage this week — each tile with a small cost chip such as $18/wk or $4/wk; the Hatchabot agent's tile has a gold star and outline, and one agent is marked stuck in a loop" width="3000" height="1800" loading="lazy">
     <figcaption class="illus">View by → Cost, on an example fleet — the agents and figures are made up for this picture.</figcaption></figure>
   <p class="note"><b>Coming next, not shipped yet:</b> budgets.</p>
-  <p class="note" style="margin-top:8px">ChatGPT's Auto picks a model for each message, inside OpenAI's app, by its own rules; Claude's apps have you choose. Hatchabot does it per agent, under your control, with the evidence and the savings shown. Dollar figures are estimates — the tokens each agent actually used, at Anthropic's list API prices — and the ones above are examples. If you connect your own Claude plan instead, nothing is billed per token, so the figure is room in the plan's limits, not money.</p>
+  <p class="note" style="margin-top:8px">ChatGPT's Auto picks a model for each message, inside OpenAI's app, by its own rules; Claude's apps have you choose. Hatchabot does it per agent, under your control, with the evidence and the savings shown. Dollar figures are estimates — the tokens each agent actually used, at Anthropic's list API prices — and the ones above are examples. If you connect your own Claude plan instead, nothing is billed per token, so the figure is room in the plan's limits, not money. It can't see how much of a plan's limit is left — Anthropic doesn't report that to a setup token — so on a plan the figures are a measure of use, not of what remains. It never changes an agent on its own: every switch, compaction, cap or pause is a card you confirm.</p>
 </div></section>
 
 <section class="household" id="household"><div class="wrap household-grid">

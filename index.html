@@ -211,13 +211,13 @@
       <li><h3>Get an AI key ready</h3><p>Create an API key at <a href="https://console.anthropic.com">console.anthropic.com</a> (billed per use). Or, if you have your own Claude Pro or Max plan, connect that instead: install Claude Code with <code>npm i -g @anthropic-ai/claude-code</code>, sign in, and run <code>claude setup-token</code>. That use is between you and Anthropic, under their terms, which can change.</p></li>
       <li><h3>Install Hatchabot</h3><p>On the computer that stays on, run:</p>
         <div class="cmd"><pre id="installCmd">bash -c "$(curl -fsSL https://hatchabot.com/install.sh)"</pre></div>
-        <p class="small">It checks for git, Docker and Node 22 (and offers to install what's missing), fetches the current stable release, pulls the pre-built runtime image and installs the background service. <code>hatchabot doctor</code> checks the result.</p></li>
+        <p class="small">Docker is the only thing it needs, and it offers to install that. On Ubuntu, Debian and Apple-silicon Macs it downloads Hatchabot ready to run, with everything it needs inside: no Node, no compiler. It pulls the agent runtime image, starts the background service, and ends with the address to open and a QR code for your phone. <code>hatchabot doctor</code> checks the result.</p></li>
       <li><h3>Open the app</h3><p>Go to <code>http://localhost:8080</code> on that computer and create your account — you become its owner. The setup guide then takes your API key (or token) and the bot token, creates your first agent, and can turn on HTTPS over Tailscale so it opens on your phone.</p></li>
       <li><h3>Say hi</h3><p>Click its icon to chat in the app, or open its Telegram link and send a message. It will still remember what matters from this conversation next year.</p></li>
     </ol>
     <div class="card">
       <h3>You need</h3>
-      <p style="margin-bottom:10px">A <b>Linux or macOS computer that stays on</b>, with Docker and Node 22+ — a Mac mini, a home server, an old laptop.</p>
+      <p style="margin-bottom:10px">A <b>Linux or macOS computer that stays on</b>, with Docker (the installer offers it) — a Mac mini, a home server, an old laptop.</p>
       <p style="margin-bottom:10px">Optionally a <b>Telegram</b> account, if you want to reach your agents from your phone (Slack and Discord work too).</p>
       <p style="margin-bottom:18px">An <b>AI</b>: an Anthropic API key, a local model with no account at all, or your own Claude Pro or Max plan.</p>
       <h3>Read more</h3>

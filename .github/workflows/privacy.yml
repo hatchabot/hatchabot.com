@@ -1,0 +1,40 @@
+name: privacy
+
+# The household privacy check, as hatchabot/hatchabot runs it (2026-10-11):
+# what a push or pull request adds — lines, the text inside binary files,
+# file names, commit messages and authors — looked up against keyed
+# fingerprints of the owner's private values (PRIVACY_FINGERPRINTS, synced
+# daily from the owner's machine; the values never leave it). The scanner
+# comes from a Hatchabot release by tag (release tags never move) and is
+# checked against its sha256 before it runs. A failure here emails the owner.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  privacy:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '22'
+      - name: household privacy check (keyed fingerprints)
+        env:
+          PRIVACY_FINGERPRINTS: ${{ secrets.PRIVACY_FINGERPRINTS }}
+          SCANNER_TAG: v2.162.0
+          SCANNER_SHA256: 7ebc27ddc9d435c7b8c5e640f19e5582959c4a851803b09395f53a576eb9f3c7
+        run: |
+          S="$RUNNER_TEMP/privacy-ci.mjs"
+          curl -fsSL -o "$S" "https://raw.githubusercontent.com/hatchabot/hatchabot/refs/tags/$SCANNER_TAG/scripts/privacy-ci.mjs"
+          echo "$SCANNER_SHA256  $S" | sha256sum -c -
+          node "$S" --dir "$GITHUB_WORKSPACE"

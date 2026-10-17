@@ -18,6 +18,9 @@ permissions:
 
 jobs:
   privacy:
+    # The public repo only: the private dev repo holds no fingerprint set (the
+    # publisher checks each release with its own before publishing it).
+    if: github.repository == 'hatchabot/hatchabot.com'
     runs-on: ubuntu-24.04
     timeout-minutes: 5
     steps:

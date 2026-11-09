@@ -82,7 +82,7 @@
   </div>
   <figure class="shot" style="margin-top:28px"><img src="screenshot-cost.png" alt="The home screen in View by Cost: agents banded by a week's cost at API prices — $10 to $50 a week, under $10 a week, no usage this week — each tile with a small cost chip such as $18/wk or $4/wk; the Hatchabot agent's tile has a gold star and outline, and one agent is marked stuck in a loop" width="3000" height="1800" loading="lazy">
     <figcaption class="illus">View by → Cost, on an example fleet — the agents and figures are made up for this picture.</figcaption></figure>
-  <p class="note">ChatGPT's Auto picks a model for each message, inside OpenAI's app, by its own rules; Claude's apps have you choose. Hatchabot does it per agent, under your control, with the evidence and the savings shown. Dollar figures are estimates — the tokens each agent actually used, at Anthropic's list API prices — and the ones above are examples. If you connect your own Claude plan instead, nothing is billed per token, so the figure is room in the plan's limits, not money. It can't see how much of a plan's limit is left — Anthropic doesn't report that to a setup token — so on a plan the figures are a measure of use, not of what remains. It never changes an agent on its own: every switch, compaction, cap or pause is a card you confirm.</p>
+  <p class="note">ChatGPT's Auto picks a model for each message, inside OpenAI's app, by its own rules; Claude's apps have you choose. Hatchabot does it per agent, under your control, with the evidence and the savings shown. Dollar figures are estimates — the tokens each agent actually used, at Anthropic's list API prices — and the ones above are examples. A Claude Max or Ultra plan's monthly API credits are spent through an API key at those same prices. It never changes an agent on its own: every switch, compaction, cap or pause is a card you confirm.</p>
 </div></section>
 
 <section id="story"><div class="wrap">
@@ -116,7 +116,7 @@
     <p class="eyebrow">One AI account, the whole household</p>
     <h2>Everyone gets their own agents. You connect one AI account.</h2>
     <p class="lede">A tutor for the kids, a planner the whole family shares, your own tax and investing advisors — every agent in the house runs on the one AI account you connect, on your machine. Nobody else needs an AI account or an app: they just message the agents made for them on Telegram.</p>
-    <p class="small">Your credential stays on your computer, and people talk to your agents, never to your account. Connect an Anthropic API key (pay per use) or a local model (nothing per message). If you already have a Claude Pro or Max plan, you can connect it on your own machine instead, under Anthropic's terms for that plan.</p>
+    <p class="small">Your credential stays on your computer, and people talk to your agents, never to your account. Connect an Anthropic API key (pay per use) or a local model (nothing per message). A Claude Max or Ultra plan includes monthly API credits, spent through an ordinary Anthropic API key.</p>
   </div>
   <div class="tally" aria-label="Example household">
     <div class="tally-row"><span class="tally-n">1</span><span>AI account</span></div>
@@ -222,7 +222,7 @@
     <div class="box"><b>Your family</b><p>Telegram on their phones — each agent is a contact — or the Hatchabot app itself, each with their own sign-in. Slack and Discord work too.</p></div>
     <div class="box"><b>Control plane</b><p>Node + SQLite on your machine: registry, encrypted secrets, scheduler, health, backups, audit trail.</p></div>
     <div class="box"><b>Agent containers</b><p>One OpenClaw gateway per agent, with its own bots, volume and credentials — dozens on one box.</p></div>
-    <div class="box"><b>AI &amp; data</b><p>API key or Claude plan · OpenAI · Gemini · a local model · folders · git repos · a Google account.</p></div>
+    <div class="box"><b>AI &amp; data</b><p>Anthropic API key · OpenAI · Gemini · a local model · folders · git repos · a Google account.</p></div>
   </div>
   <p class="note">Each agent's home directory is a Docker volume: persona, memory, sessions, tools. The runtime image is shared, versioned and swapped under an agent without touching the volume — so an upgrade or rebuild never costs an agent its memory.</p>
 </div></section>
@@ -233,7 +233,7 @@
   <div class="install-grid">
     <ol class="steps">
       <li><h3>Make a Telegram bot (optional)</h3><p>In Telegram, open <a href="https://t.me/BotFather">@BotFather</a>, send <code>/newbot</code>, pick a name, and keep the token it gives you. You can skip this and talk to your agents in the app, then add Telegram later.</p></li>
-      <li><h3>Get an AI key ready</h3><p>Create an API key at <a href="https://console.anthropic.com">console.anthropic.com</a> (billed per use). Or, if you have your own Claude Pro or Max plan, connect that instead: install Claude Code with <code>npm i -g @anthropic-ai/claude-code</code>, sign in, and run <code>claude setup-token</code>. That use is between you and Anthropic, under their terms, which can change.</p></li>
+      <li><h3>Get an AI key ready</h3><p>Create an API key at <a href="https://console.anthropic.com">console.anthropic.com</a> (billed per use). A Claude Max or Ultra plan includes monthly API credits: claim them into a Claude Console organization and make the key there. A plan's own sign-in is for Anthropic's apps: <a href="https://code.claude.com/docs/en/legal-and-compliance">Anthropic's terms</a> ask other software to use an API key.</p></li>
       <li><h3>Install Hatchabot</h3><p>On the computer that stays on, run:</p>
         <div class="cmd"><pre id="installCmd">bash -c "$(curl -fsSL https://hatchabot.com/install.sh)"</pre></div>
         <p class="small">Docker is the only thing it needs, and it offers to install that. On Ubuntu, Debian and Apple-silicon Macs it downloads Hatchabot ready to run, with everything it needs inside: no Node, no compiler. It pulls the agent runtime image, starts the background service, and ends with the address to open and a QR code for your phone. <code>hatchabot doctor</code> checks the result.</p></li>
@@ -244,7 +244,7 @@
       <h3>You need</h3>
       <p style="margin-bottom:10px">A <b>Linux or macOS computer that stays on</b>, with Docker (the installer offers it) — a Mac mini, a home server, an old laptop.</p>
       <p style="margin-bottom:10px">Optionally a <b>Telegram</b> account, if you want to reach your agents from your phone (Slack and Discord work too).</p>
-      <p style="margin-bottom:18px">An <b>AI</b>: an Anthropic API key, a local model with no account at all, or your own Claude Pro or Max plan.</p>
+      <p style="margin-bottom:18px">An <b>AI</b>: an Anthropic API key (a Claude Max or Ultra plan's monthly API credits come as one), or a local model with no account at all.</p>
       <h3>Read more</h3>
       <p><a href="https://github.com/hatchabot/hatchabot/blob/main/docs/quickstart.md">Quick start</a> · <a href="https://github.com/hatchabot/hatchabot/blob/main/docs/why-hatchabot.md">Philosophy</a> · <a href="https://github.com/hatchabot/hatchabot/blob/main/docs/deck/hatchabot-deck.pdf">Slide deck</a> · <a href="https://github.com/hatchabot/hatchabot/releases">Releases</a> · <a href="https://github.com/hatchabot/hatchabot/blob/main/SECURITY.md">Security</a></p>
     </div>
@@ -259,7 +259,7 @@
   <p class="eyebrow">Questions</p>
   <h2>Frequently asked</h2>
   <details class="faq"><summary>Do I need to be technical?</summary><p>You need to be comfortable pasting one command into a terminal, once. After that everything happens in the web app and in Telegram. The people you invite need nothing but Telegram.</p></details>
-  <details class="faq"><summary>What does it cost?</summary><p>The software is free and open source (MIT). You bring the hardware and the AI. An Anthropic API key is billed per token: a light agent costs a few dollars a month, a busy one with long conversations much more, and Hatchabot shows what each agent spends, with a monthly budget per agent or for the whole machine if you want one. A local model costs nothing per message. If you already pay for a Claude Pro or Max plan, you can connect it on your own machine instead; your agents then share that plan's usage limits, and Anthropic's terms for the plan apply. Either way, the people you set agents up for don't need an AI account of their own.</p></details>
+  <details class="faq"><summary>What does it cost?</summary><p>The software is free and open source (MIT). You bring the hardware and the AI. An Anthropic API key is billed per token: a light agent costs a few dollars a month, a busy one with long conversations much more, and Hatchabot shows what each agent spends, with a monthly budget per agent or for the whole machine if you want one. A local model costs nothing per message. A Claude Max or Ultra plan includes monthly API credits, spent through an API key like any other; a plan's own sign-in is for Anthropic's apps, and <a href="https://code.claude.com/docs/en/legal-and-compliance">Anthropic's terms</a> ask other software to use an API key. Either way, the people you set agents up for don't need an AI account of their own.</p></details>
   <details class="faq"><summary>What hardware do I need?</summary><p>Any Linux or macOS computer that stays on and runs Docker. The runtime image is about 2 GB, and each agent is one container with its own volume. Each awake agent uses about 1 GB of memory: a 16 GB machine keeps half a dozen awake, more if idle ones sleep. A second machine can host agents too, over Tailscale.</p></details>
   <details class="faq"><summary>Where does my data go?</summary><p>Agents, their memory and your credentials live on your machine. Messages travel through Telegram (or through nothing at all, if you chat in the app), and each turn is sent to the AI provider you chose for that agent — or to no AI company, if the agent runs on a local model (it still uses the internet for search and tools).</p></details>
   <details class="faq"><summary>Can a stranger message my agents?</summary><p>They can find a bot — Telegram usernames are public — but they get silence. An agent only listens to people you invited or who already use one of your agents; an invite can even name the one person it is for. Anyone else's message is dropped before it reaches the agent, and you are never bothered with it (while an invite window is open, a stranger gets a short pairing reply).</p></details>
